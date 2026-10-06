@@ -1,0 +1,330 @@
+{
+  "version": "0.1.0",
+  "status": "draft",
+  "rules": [
+    {
+      "id": "EA-001",
+      "domain": "enterprise",
+      "statement": "Each solution MUST identify its business capability and accountable owner.",
+      "verification": "Solution document review",
+      "adr": "ADR-0001",
+      "document": "enterprise/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "EA-002",
+      "domain": "enterprise",
+      "statement": "Applications MUST communicate through documented contracts and identify data owners.",
+      "verification": "Dependency and data ownership review",
+      "adr": "ADR-0001",
+      "document": "enterprise/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "EA-003",
+      "domain": "enterprise",
+      "statement": "Technology selections SHOULD follow a supported lifecycle and require justification for new platforms.",
+      "verification": "Technology register review",
+      "adr": "ADR-0001",
+      "document": "enterprise/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "SA-001",
+      "domain": "solution",
+      "statement": "Every production solution MUST document context, deployables, repositories, owners, and external dependencies.",
+      "verification": "Solution release review",
+      "adr": "ADR-0002",
+      "document": "solution/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "SA-002",
+      "domain": "solution",
+      "statement": "Trust boundaries, data flows, failure modes, and deployment topology MUST be documented.",
+      "verification": "Threat and deployment review",
+      "adr": "ADR-0002",
+      "document": "solution/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "SA-003",
+      "domain": "solution",
+      "statement": "Solutions MUST pin their standards baseline and record scoped exceptions.",
+      "verification": "Baseline and exception review",
+      "adr": "ADR-0002",
+      "document": "solution/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "FE-001",
+      "domain": "frontend",
+      "statement": "Frontend and backend MUST have separate application repositories and release pipelines.",
+      "verification": "Repository and pipeline review",
+      "adr": "ADR-0003",
+      "document": "frontend/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "FE-002",
+      "domain": "frontend",
+      "statement": "Features MUST NOT import another feature\u2019s internal implementation; use its documented public API or app-level composition.",
+      "verification": "Import boundary lint",
+      "adr": "ADR-0003",
+      "document": "frontend/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "FE-003",
+      "domain": "frontend",
+      "statement": "HTTP calls MUST pass through the approved API client layer; generated files MUST NOT be manually edited.",
+      "verification": "Import lint and regeneration diff",
+      "adr": "ADR-0003",
+      "document": "frontend/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "FE-004",
+      "domain": "frontend",
+      "statement": "Business-specific logic MUST stay in its feature and shared code MUST NOT depend on features.",
+      "verification": "Import boundary lint",
+      "adr": "ADR-0003",
+      "document": "frontend/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "FE-005",
+      "domain": "frontend",
+      "statement": "UI MUST provide accessible keyboard navigation, semantic controls, and loading, empty, and failure states.",
+      "verification": "Accessibility and component checks",
+      "adr": "ADR-0003",
+      "document": "frontend/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "BE-001",
+      "domain": "backend",
+      "statement": "Domain MUST NOT depend on Application, Infrastructure, API, HTTP, or persistence frameworks.",
+      "verification": "Assembly and package architecture tests",
+      "adr": "ADR-0004",
+      "document": "backend/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "BE-002",
+      "domain": "backend",
+      "statement": "Application MUST NOT depend on Infrastructure or API.",
+      "verification": "Assembly architecture tests",
+      "adr": "ADR-0004",
+      "document": "backend/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "BE-003",
+      "domain": "backend",
+      "statement": "Infrastructure MUST implement ports owned by Application or Domain.",
+      "verification": "Architecture tests and design review",
+      "adr": "ADR-0004",
+      "document": "backend/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "BE-004",
+      "domain": "backend",
+      "statement": "Endpoints MUST delegate business decisions to application/domain code and enforce documented authorization.",
+      "verification": "API tests and endpoint review",
+      "adr": "ADR-0004",
+      "document": "backend/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "BE-005",
+      "domain": "backend",
+      "statement": "Module data MUST be accessed through its owned interfaces; cross-module writes MUST NOT bypass ownership.",
+      "verification": "Module dependency tests and data review",
+      "adr": "ADR-0004",
+      "document": "backend/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "DB-001",
+      "domain": "database",
+      "statement": "Every persistent store and schema MUST have a named owning application/module and data steward.",
+      "verification": "Ownership register review",
+      "adr": "ADR-0005",
+      "document": "database/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "DB-002",
+      "domain": "database",
+      "statement": "Schema changes MUST use committed migrations with expand/contract compatibility across supported releases.",
+      "verification": "Migration rehearsal and mixed-version integration tests",
+      "adr": "ADR-0005",
+      "document": "database/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "DB-003",
+      "domain": "database",
+      "statement": "Relational integrity MUST use constraints where applicable; indexes MUST be justified by measured access patterns.",
+      "verification": "Constraint tests and query plan review",
+      "adr": "ADR-0005",
+      "document": "database/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "DB-004",
+      "domain": "database",
+      "statement": "Runtime database identities MUST have least privilege and MUST NOT perform production schema administration.",
+      "verification": "Grant inspection",
+      "adr": "ADR-0005",
+      "document": "database/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "DB-005",
+      "domain": "database",
+      "statement": "Production stores MUST define RPO/RTO, retention, backup encryption, and restore-test evidence.",
+      "verification": "Recovery exercise review",
+      "adr": "ADR-0005",
+      "document": "database/architecture.md",
+      "status": "Accepted"
+    },
+    {
+      "id": "INT-001",
+      "domain": "integration",
+      "statement": "HTTP APIs MUST publish versioned OpenAPI artifacts and use a documented error contract.",
+      "verification": "Contract publication and API tests",
+      "adr": "ADR-0006",
+      "document": "integration/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "INT-002",
+      "domain": "integration",
+      "statement": "Breaking contract changes MUST retain a documented migration and supported compatibility window.",
+      "verification": "Contract diff and consumer compatibility tests",
+      "adr": "ADR-0006",
+      "document": "integration/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "INT-003",
+      "domain": "integration",
+      "statement": "Mutation retries MUST account for idempotency and ambiguous network outcomes.",
+      "verification": "Retry and duplicate-delivery tests",
+      "adr": "ADR-0006",
+      "document": "integration/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "INT-004",
+      "domain": "integration",
+      "statement": "Trace context MUST propagate across supported boundaries without secrets or sensitive payloads in telemetry.",
+      "verification": "Trace integration and redaction checks",
+      "adr": "ADR-0006",
+      "document": "integration/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "PL-001",
+      "domain": "platform",
+      "statement": "Application pipelines MUST independently build, test, and release immutable artifacts.",
+      "verification": "Pipeline review",
+      "adr": "ADR-0007",
+      "document": "platform/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "PL-002",
+      "domain": "platform",
+      "statement": "Changes MUST run applicable unit, architecture, integration, contract, security, and critical journey checks.",
+      "verification": "CI evidence review",
+      "adr": "ADR-0007",
+      "document": "platform/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "PL-003",
+      "domain": "platform",
+      "statement": "Production workloads MUST emit structured logs, useful metrics, traces, and readiness/liveness signals without exposing sensitive data.",
+      "verification": "Operational smoke tests",
+      "adr": "ADR-0007",
+      "document": "platform/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "PL-004",
+      "domain": "platform",
+      "statement": "Secrets MUST be supplied through approved secret management and MUST NOT appear in source, images, or logs.",
+      "verification": "Secret scanning and deployment review",
+      "adr": "ADR-0007",
+      "document": "platform/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "INF-001",
+      "domain": "infrastructure",
+      "statement": "Infrastructure MUST be version-controlled with reviewed plans and controlled production apply identities.",
+      "verification": "IaC plan and drift review",
+      "adr": "ADR-0008",
+      "document": "infrastructure/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "INF-002",
+      "domain": "infrastructure",
+      "statement": "Data stores MUST use restricted network access and documented ingress/egress paths.",
+      "verification": "Network policy verification",
+      "adr": "ADR-0008",
+      "document": "infrastructure/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "INF-003",
+      "domain": "infrastructure",
+      "statement": "Production topology MUST document failure domains, capacity assumptions, DNS, certificates, and recovery dependencies.",
+      "verification": "Deployment and recovery review",
+      "adr": "ADR-0008",
+      "document": "infrastructure/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "SEC-001",
+      "domain": "security",
+      "statement": "Every exposed operation MUST define authentication and server-enforced authorization, including resource ownership.",
+      "verification": "Positive and negative authorization tests",
+      "adr": "ADR-0009",
+      "document": "security/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "SEC-002",
+      "domain": "security",
+      "statement": "Solutions MUST document threats, trust boundaries, data classification, and mitigation owners.",
+      "verification": "Threat model review",
+      "adr": "ADR-0009",
+      "document": "security/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "SEC-003",
+      "domain": "security",
+      "statement": "Browser applications MUST NOT contain confidential credentials and token/session handling MUST follow the documented identity design.",
+      "verification": "Bundle inspection and identity tests",
+      "adr": "ADR-0009",
+      "document": "security/architecture.md",
+      "status": "Proposed"
+    },
+    {
+      "id": "SEC-004",
+      "domain": "security",
+      "statement": "Sensitive data MUST have defined encryption, retention, deletion, and telemetry redaction controls.",
+      "verification": "Security and data lifecycle review",
+      "adr": "ADR-0009",
+      "document": "security/architecture.md",
+      "status": "Proposed"
+    }
+  ]
+}

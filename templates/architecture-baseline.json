@@ -1,0 +1,9 @@
+{
+  "standardsRepository": "REPLACE_WITH_REPOSITORY_URL",
+  "standardsRevision": "REPLACE_WITH_IMMUTABLE_COMMIT",
+  "baselineVersion": "0.1.0",
+  "solutionDocument": "docs/solution-architecture.md",
+  "applicationKind": "frontend-or-backend-or-worker",
+  "applicableRules": [],
+  "acceptedExceptions": []
+}
