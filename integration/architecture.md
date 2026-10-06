@@ -1,6 +1,6 @@
 # Integration architecture
 
-Baseline: 0.1.0 draft. Scope/decision: [ADR-0006](../adr/0006-integration.md).
+Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0006](../adr/0006-integration.md).
 
 ## Purpose
 
@@ -22,3 +22,9 @@ Backend owns the API contract artifact. Publish it with a version/checksum; cons
 ## Adoption
 
 Read [governance](../governance/adoption.md). Proposed rules are not approved merely because they use MUST. Record solution-specific choices, tests, and exceptions in the pinned baseline.
+
+## Implementation standards
+
+- [HTTP API design](http-api-standard.md)
+- [Contract ownership, generation, and compatibility](contracts-standard.md)
+- [Idempotency, messaging, and resilience](messaging-resilience.md)

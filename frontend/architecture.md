@@ -1,6 +1,6 @@
 # Frontend architecture
 
-Baseline: 0.1.0 draft. Scope/decision: [ADR-0003](../adr/0003-frontend.md).
+Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0003](../adr/0003-frontend.md).
 
 ## Purpose
 
@@ -23,3 +23,8 @@ Proposed React/TypeScript layout: src/app for routing/providers/configuration, s
 ## Adoption
 
 Read [governance](../governance/adoption.md). Proposed rules are not approved merely because they use MUST. Record solution-specific choices, tests, and exceptions in the pinned baseline.
+
+## Implementation standards
+
+- [Frontend structure, state, and data access](implementation-standard.md)
+- [Accessible and resilient user interfaces](accessibility-performance.md)

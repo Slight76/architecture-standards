@@ -1,9 +1,13 @@
-## Change and rationale
+## Outcome and rationale
 
-## Affected rules, ADRs, and domains
+## Baseline and applicable rule IDs
 
-## Compatibility and migration
+## Affected ADRs, domains, contracts, and data
 
-## Validation evidence
+## Compatibility, migration, and rollback
 
-## Exceptions and approvals
+## Actual validation evidence
+
+Commands/reviews, commit, results, reports; clearly identify not_run checks.
+
+## Exceptions, unresolved inputs, and adoption impact

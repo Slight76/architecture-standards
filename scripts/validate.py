@@ -1,33 +1,82 @@
-"""Validate documentation integrity, not application compliance."""
-from pathlib import Path
+"""Validate local documentation and catalog consistency; no runtime compliance claims."""
 import json
+from pathlib import Path
 import re
 import sys
 
-root = Path(__file__).resolve().parents[1]
-errors = []
-catalog = json.loads((root / 'standards/catalog.json').read_text())
-seen = set()
-for rule in catalog['rules']:
-    if rule['id'] in seen:
-        errors.append(f"Duplicate rule: {rule['id']}")
-    seen.add(rule['id'])
-    doc = root / rule['document']
-    if not doc.is_file() or rule['id'] not in doc.read_text():
-        errors.append(f"Rule absent from document: {rule['id']}")
-    number = rule['adr'].split('-')[1]
-    if len(list((root / 'adr').glob(f'{number}-*.md'))) != 1:
-        errors.append(f"Invalid ADR reference: {rule['adr']}")
-    if rule['status'] not in ('Accepted', 'Proposed'):
-        errors.append(f"Invalid rule status: {rule['id']}")
-for doc in root.rglob('*.md'):
-    for link in re.findall(r'\[[^\]]*\]\(([^)]+)\)', doc.read_text()):
-        if '://' in link or link.startswith('#'):
-            continue
-        target = (doc.parent / link.split('#')[0]).resolve()
-        if not target.is_relative_to(root) or not target.exists():
-            errors.append(f"Broken local link: {doc.relative_to(root)} -> {link}")
-if errors:
-    print('\n'.join(errors))
-    sys.exit(1)
-print(f"Validated {len(seen)} rules and all local Markdown links.")
+ROOT = Path(__file__).resolve().parents[1]
+RULE = re.compile(r'\b[A-Z]+-\d{3}\b')
+
+
+def validate(root):
+    errors = []
+    catalog = json.loads((root/'standards/catalog.json').read_text())
+    decisions = {}
+    for path in (root/'adr').glob('[0-9][0-9][0-9][0-9]-*.md'):
+        text = path.read_text()
+        aid = 'ADR-' + path.name[:4]
+        if aid in decisions:
+            errors.append(f'Duplicate ADR {aid}')
+        status = re.search(r'^Status: (.+)$', text, re.M)
+        decisions[aid] = status.group(1) if status else None
+        for heading in ('Context', 'Decision', 'Alternatives', 'Consequences', 'Traceability', 'Verification', 'Approval'):
+            if f'## {heading}' not in text:
+                errors.append(f'{aid} lacks {heading}')
+        if decisions[aid] not in {'Accepted', 'Proposed', 'Rejected', 'Superseded'}:
+            errors.append(f'{aid} has invalid status')
+    seen = set()
+    for rule in catalog['rules']:
+        rid = rule.get('id', '')
+        if not RULE.fullmatch(rid) or rid in seen:
+            errors.append(f'Invalid/duplicate rule {rid}')
+        seen.add(rid)
+        for key in ('domain','statement','verification','adr','document','status','applies_when'):
+            if not isinstance(rule.get(key), str) or not rule[key].strip():
+                errors.append(f'{rid} missing {key}')
+        doc = (root/rule['document']).resolve()
+        if not doc.is_relative_to(root.resolve()) or not doc.is_file():
+            errors.append(f'{rid} has invalid document')
+        elif not re.search(r'\|\s*'+re.escape(rid)+r'\s*\|', doc.read_text()):
+            errors.append(f'{rid} missing from document rule table')
+        if rule['adr'] not in decisions:
+            errors.append(f'{rid} references unknown ADR')
+        if rule['status'] not in {'Accepted', 'Proposed'}:
+            errors.append(f'{rid} has invalid status')
+        if rule['status'] == 'Accepted' and decisions.get(rule['adr']) != 'Accepted':
+            errors.append(f'{rid} cannot be Accepted under a non-accepted ADR')
+    for doc in root.rglob('*.md'):
+        text = doc.read_text()
+        for link in re.findall(r'\[[^\]]*\]\(([^)]+)\)', text):
+            if '://' in link or link.startswith(('#', 'mailto:')):
+                continue
+            target = (doc.parent/link.split('#')[0]).resolve()
+            if not target.is_relative_to(root.resolve()) or not target.exists():
+                errors.append(f'Broken link: {doc.relative_to(root)} -> {link}')
+        # Every concrete rule mention resolves; placeholders are alphabetic, not numeric.
+        for rid in RULE.findall(text):
+            if rid not in seen:
+                errors.append(f'Unknown rule mention {rid} in {doc.relative_to(root)}')
+    for file in root.rglob('*.json'):
+        try:
+            json.loads(file.read_text())
+        except ValueError:
+            errors.append(f'Invalid JSON: {file.relative_to(root)}')
+    return errors
+
+
+def main():
+    try:
+        errors = validate(ROOT)
+    except (ValueError, KeyError, TypeError, OSError) as exc:
+        print(f'Document validation error: {exc}')
+        return 1
+    if errors:
+        print('\n'.join(errors))
+        return 1
+    catalog = json.loads((ROOT/'standards/catalog.json').read_text())
+    print(f"Validated {len(catalog['rules'])} rules, ADR consistency, JSON, and local document links.")
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

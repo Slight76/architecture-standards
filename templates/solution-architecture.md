@@ -45,3 +45,18 @@ Approved measurable latency, load, availability, RPO and RTO; dependency failure
 ## Verification and risks
 
 Rule-to-check matrix, test evidence, capacity assumptions, unresolved risks, owners, next review trigger/date.
+
+## Required implementation decision matrix
+
+| Choice | Selected value | Rule/ADR | Owner | Verification |
+| --- | --- | --- | --- | --- |
+| Public origins and CORS mode | Required | CORS-001 | Required | Browser/header cases |
+| Browser/workload identity | Required | IAM-001 | Required | Token/session/CSRF cases |
+| API version and contract publication | Required | CON-001 | Required | Compatibility report |
+| State and module boundaries | Required | FE-007, BE-006 | Required | Import/architecture checks |
+| Concurrency and idempotency | Required where mutations exist | API-004, RES-002 | Required | Competing/replayed requests |
+| Data ownership and migration | Required where persistent | DB-006, MIG-001 | Required | Schema/upgrade evidence |
+| Failure budgets and recovery | Required before production | SLO-001, DR-001 | Required | Measured exercise |
+| Deployment and rollback | Required | CICD-003 | Required | Staging evidence |
+
+Reference the task-specific standard for exact defaults. Mark conditional topics with a reason rather than leaving ambiguous blanks. Include a threat model and operational runbooks for production.
