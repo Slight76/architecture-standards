@@ -18,7 +18,12 @@ jobs:
         id: pin
         run: |
           echo "repo=$(jq -r .standardsRepository architecture-baseline.json | sed -e 's#https://github.com/##' -e 's#\.git$##')" >> "$GITHUB_OUTPUT"
-          echo "sha=$(jq -r .standardsRevision architecture-baseline.json)" >> "$GITHUB_OUTPUT"
+          sha="$(jq -er '.standardsRevision | select(type == "string")' architecture-baseline.json)" || exit 1
+          if [[ ! "$sha" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "standardsRevision must be a 40-character commit SHA" >&2
+            exit 1
+          fi
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
       - name: Check out standards at the pinned revision
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
