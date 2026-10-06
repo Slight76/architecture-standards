@@ -14,13 +14,15 @@ def main(argv=None):
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args(argv)
     expected = SOURCE.read_bytes()
-    drift = [t for t in TARGETS if not t.is_file() or t.read_bytes() != expected]
+    drift = [t for t in TARGETS if t.is_symlink() or not t.is_file() or t.read_bytes() != expected]
     if args.check:
         for t in drift:
             print(f'Out of sync: {t.relative_to(ROOT)} (run scripts/sync_skills.py)')
         return 1 if drift else 0
     for t in drift:
         t.parent.mkdir(parents=True, exist_ok=True)
+        if t.is_symlink():
+            t.unlink()
         t.write_bytes(expected)
         print(f'Updated {t.relative_to(ROOT)}')
     return 0
