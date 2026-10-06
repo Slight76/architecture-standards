@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Added `CLAUDE.md` (`@AGENTS.md` import), a `consumer-kit/` for Copilot, Claude Code and Codex consumers, a shared `architecture-standards` skill with `scripts/sync_skills.py` drift check, `scripts/fetch_standards.py`, and validator checks for these files.
+
 ## 0.3.0 — 2026-10-05
 
 - Added logical CQRS defaults, command/query structure and application execution boundaries.

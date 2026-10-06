@@ -8,7 +8,7 @@ MUST is mandatory within an adopted baseline. SHOULD is a default whose departur
 
 ## Adoption
 
-Commit architecture-baseline.json in each application using the template. Pin an immutable standards commit and document applicable rule IDs and accepted exceptions. Copy an agent bootstrap into the application's AGENTS.md so agents actually discover the external rules; an AGENTS.md in this repository alone will not load in other repositories.
+Commit architecture-baseline.json in each application using the template. Pin an immutable standards commit and document applicable rule IDs and accepted exceptions. Copy an agent bootstrap into the application's AGENTS.md so agents actually discover the external rules; an AGENTS.md in this repository alone will not load in other repositories. The [consumer kit](../consumer-kit/README.md) provides the bootstrap snippet, Claude and Copilot shims, a Copilot setup workflow, and `.standards/` retrieval (submodule or `scripts/fetch_standards.py`).
 
 Use a reviewed PR to change the pinned revision. Summarize new, removed, and changed rules and migration work. Existing applications do not automatically inherit a change to main.
 

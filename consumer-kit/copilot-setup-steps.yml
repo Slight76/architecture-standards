@@ -1,0 +1,29 @@
+name: Copilot Setup Steps
+on:
+  workflow_dispatch:
+  push:
+    paths: [.github/workflows/copilot-setup-steps.yml]
+  pull_request:
+    paths: [.github/workflows/copilot-setup-steps.yml]
+permissions:
+  contents: read
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read pinned standards revision
+        id: pin
+        run: |
+          echo "repo=$(jq -r .standardsRepository architecture-baseline.json | sed 's#https://github.com/##')" >> "$GITHUB_OUTPUT"
+          echo "sha=$(jq -r .standardsRevision architecture-baseline.json)" >> "$GITHUB_OUTPUT"
+      - name: Check out standards at the pinned revision
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.pin.outputs.repo }}
+          ref: ${{ steps.pin.outputs.sha }}
+          path: .standards
+          # Required only if the standards repo is private (read-only token).
+          token: ${{ secrets.STANDARDS_REPO_TOKEN || github.token }}

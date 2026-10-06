@@ -10,6 +10,8 @@
 4. Use the [solution template](templates/solution-architecture.md) and [agent bootstrap](templates/agent-bootstrap.md).
 5. Verify applicable rules and report [implementation evidence](templates/implementation-evidence.md).
 
+Using the handbook from an application repo with Copilot, Claude Code or Codex: copy the [consumer kit](consumer-kit/README.md). Edit the canonical skill in `skills/` and run `python3 scripts/sync_skills.py` to refresh the per-agent copies.
+
 ## What the baseline decides
 
 | Concern | Recommended default | Detailed standard |
