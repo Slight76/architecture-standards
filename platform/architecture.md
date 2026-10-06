@@ -1,6 +1,6 @@
 # Platform architecture
 
-Baseline: 0.1.0 draft. Scope/decision: [ADR-0007](../adr/0007-platform.md).
+Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0007](../adr/0007-platform.md).
 
 ## Purpose
 
@@ -22,3 +22,9 @@ Separate development, test, and production identities and configuration. Build o
 ## Adoption
 
 Read [governance](../governance/adoption.md). Proposed rules are not approved merely because they use MUST. Record solution-specific choices, tests, and exceptions in the pinned baseline.
+
+## Implementation standards
+
+- [Build, release, and supply-chain controls](delivery-standard.md)
+- [Observability, health, and service objectives](observability-standard.md)
+- [Verification boundaries and test evidence](testing-standard.md)

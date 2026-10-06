@@ -1,6 +1,6 @@
 # Security architecture
 
-Baseline: 0.1.0 draft. Scope/decision: [ADR-0009](../adr/0009-security.md).
+Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0009](../adr/0009-security.md).
 
 ## Purpose
 
@@ -22,3 +22,9 @@ Select the identity provider and browser session design through a solution ADR. 
 ## Adoption
 
 Read [governance](../governance/adoption.md). Proposed rules are not approved merely because they use MUST. Record solution-specific choices, tests, and exceptions in the pinned baseline.
+
+## Implementation standards
+
+- [CORS and browser origin policy](cors-standard.md)
+- [Identity, authorization, and session design](identity-standard.md)
+- [Threat modeling and secure application behavior](application-security-standard.md)

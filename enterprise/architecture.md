@@ -1,6 +1,6 @@
 # Enterprise architecture
 
-Baseline: 0.1.0 draft. Scope/decision: [ADR-0001](../adr/0001-enterprise.md).
+Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0001](../adr/0001-enterprise.md).
 
 ## Purpose
 
@@ -21,3 +21,7 @@ Business capabilities → solutions → independent applications → owned data 
 ## Adoption
 
 Read [governance](../governance/adoption.md). Proposed rules are not approved merely because they use MUST. Record solution-specific choices, tests, and exceptions in the pinned baseline.
+
+## Implementation standards
+
+- [Enterprise governance, portfolio, and technology lifecycle](operating-model.md)

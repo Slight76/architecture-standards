@@ -1,0 +1,1 @@
+Read [AGENTS.md](../AGENTS.md) for task-specific standards, decision authority, and verification. Do not duplicate policy here. For consuming application repos, use the baseline and bootstrap templates so the standards revision is explicit.

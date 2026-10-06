@@ -1,6 +1,6 @@
 # Infrastructure architecture
 
-Baseline: 0.1.0 draft. Scope/decision: [ADR-0008](../adr/0008-infrastructure.md).
+Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0008](../adr/0008-infrastructure.md).
 
 ## Purpose
 
@@ -21,3 +21,7 @@ Choose managed services, containers, or VMs from requirements and operating capa
 ## Adoption
 
 Read [governance](../governance/adoption.md). Proposed rules are not approved merely because they use MUST. Record solution-specific choices, tests, and exceptions in the pinned baseline.
+
+## Implementation standards
+
+- [Network, compute, configuration, and infrastructure lifecycle](implementation-standard.md)

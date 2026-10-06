@@ -1,6 +1,6 @@
 # Database architecture
 
-Baseline: 0.1.0 draft. Scope/decision: [ADR-0005](../adr/0005-database.md).
+Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0005](../adr/0005-database.md).
 
 ## Purpose
 
@@ -23,3 +23,8 @@ Logical design records entities, relationships, cardinality, invariants, classif
 ## Adoption
 
 Read [governance](../governance/adoption.md). Proposed rules are not approved merely because they use MUST. Record solution-specific choices, tests, and exceptions in the pinned baseline.
+
+## Implementation standards
+
+- [Logical and physical database design](design-standard.md)
+- [Schema delivery and recovery](migration-recovery-standard.md)

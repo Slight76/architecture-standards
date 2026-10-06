@@ -1,6 +1,6 @@
 # Architecture principles
 
-Version: 0.1.0 draft.
+Version: 0.2.0 recommended draft.
 
 1. Independent frontend and backend ownership, repositories, builds, releases, and rollback.
 2. Explicit, versioned contracts connect applications.
