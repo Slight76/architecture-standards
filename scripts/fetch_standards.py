@@ -18,15 +18,15 @@ def main(argv=None):
     args = parser.parse_args(argv)
     baseline = json.loads(Path(args.baseline).read_text())
     repo, rev = baseline.get('standardsRepository'), baseline.get('standardsRevision')
-    if not repo or not re.fullmatch(r'[0-9a-f]{40}', rev or ''):
-        print('Baseline needs standardsRepository and a 40-character standardsRevision.')
+    if not re.fullmatch(r'https://[\w.-]+/[\w./-]+', repo or '') or not re.fullmatch(r'[0-9a-f]{40}', rev or ''):
+        print('Baseline needs an https standardsRepository URL and a 40-character standardsRevision.')
         return 1
     dest = Path(args.dest)
     try:
         if not (dest/'.git').exists():
-            git('clone', '--no-checkout', repo, str(dest))
-        git('fetch', 'origin', rev, cwd=dest)
-        git('-c', 'advice.detachedHead=false', 'checkout', '--detach', rev, cwd=dest)
+            git('clone', '--no-checkout', '--', repo, str(dest))
+        git('fetch', 'origin', '--', rev, cwd=dest)
+        git('-c', 'advice.detachedHead=false', 'checkout', '--detach', '--', rev, cwd=dest)
     except (subprocess.CalledProcessError, OSError) as exc:
         print(f'Could not retrieve standards revision {rev}: {exc}')
         return 1

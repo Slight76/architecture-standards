@@ -13,14 +13,14 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Read pinned standards revision
         id: pin
         run: |
-          echo "repo=$(jq -r .standardsRepository architecture-baseline.json | sed 's#https://github.com/##')" >> "$GITHUB_OUTPUT"
+          echo "repo=$(jq -r .standardsRepository architecture-baseline.json | sed -e 's#https://github.com/##' -e 's#\.git$##')" >> "$GITHUB_OUTPUT"
           echo "sha=$(jq -r .standardsRevision architecture-baseline.json)" >> "$GITHUB_OUTPUT"
       - name: Check out standards at the pinned revision
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           repository: ${{ steps.pin.outputs.repo }}
           ref: ${{ steps.pin.outputs.sha }}
