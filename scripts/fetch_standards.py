@@ -27,6 +27,11 @@ def main(argv=None):
             git('clone', '--no-checkout', '--', repo, str(dest))
         git('fetch', repo, rev, cwd=dest)
         git('-c', 'advice.detachedHead=false', 'checkout', '--detach', rev, cwd=dest)
+        status = subprocess.run(['git', 'status', '--porcelain'], cwd=dest,
+                                capture_output=True, text=True, check=True)
+        if status.stdout:
+            print(f'Cannot use modified standards checkout: {dest}')
+            return 1
     except (subprocess.CalledProcessError, OSError) as exc:
         print(f'Could not retrieve standards revision {rev}: {exc}')
         return 1
