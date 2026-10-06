@@ -1,6 +1,6 @@
 # Agent development protocol and evidence
 
-Baseline: 0.2.0 recommended draft. Applies when: a coding agent plans or changes application code
+Baseline: 0.3.0 recommended draft. Applies when: a coding agent plans or changes application code
 
 Decision: [ADR-0024](../adr/0024-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

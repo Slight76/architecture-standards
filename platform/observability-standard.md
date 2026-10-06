@@ -1,6 +1,6 @@
 # Observability, health, and service objectives
 
-Baseline: 0.2.0 recommended draft. Applies when: an application runs outside local development
+Baseline: 0.3.0 recommended draft. Applies when: an application runs outside local development
 
 Decision: [ADR-0021](../adr/0021-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

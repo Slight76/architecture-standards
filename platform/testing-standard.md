@@ -1,6 +1,6 @@
 # Verification boundaries and test evidence
 
-Baseline: 0.2.0 recommended draft. Applies when: an application implements adopted architecture rules
+Baseline: 0.3.0 recommended draft. Applies when: an application implements adopted architecture rules
 
 Decision: [ADR-0020](../adr/0020-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

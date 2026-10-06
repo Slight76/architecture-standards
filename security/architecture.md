@@ -1,6 +1,6 @@
 # Security architecture
 
-Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0009](../adr/0009-security.md).
+Baseline: 0.3.0 recommended draft. Scope/decision: [ADR-0009](../adr/0009-security.md).
 
 ## Purpose
 

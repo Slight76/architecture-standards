@@ -9,8 +9,10 @@ Read this file, [principles](ARCHITECTURE-PRINCIPLES.md), [adoption](governance/
 | Any application change | [Agent protocol](governance/agent-development-standard.md), [testing](platform/testing-standard.md), applicable catalog rules and local solution ADRs |
 | UI/feature/state | [Frontend implementation](frontend/implementation-standard.md), [accessibility/performance](frontend/accessibility-performance.md) |
 | Endpoint or contract | [HTTP design](integration/http-api-standard.md), [contracts](integration/contracts-standard.md), [identity](security/identity-standard.md) |
+| Host pipeline or error handling | [Middleware](backend/middleware-standard.md), identity, CORS and observability |
+| OpenAPI or Swagger | [OpenAPI/Swagger](backend/openapi-swagger-standard.md), contract lifecycle and HTTP design |
 | Browser/API connectivity | [CORS](security/cors-standard.md), identity, deployment origin matrix |
-| Backend use case | [Backend implementation](backend/implementation-standard.md), [persistence](backend/persistence-standard.md) |
+| Backend use case | [Backend implementation](backend/implementation-standard.md), [persistence](backend/persistence-standard.md), [CQRS](backend/cqrs-standard.md) |
 | Schema/query | [Database design](database/design-standard.md), [migration/recovery](database/migration-recovery-standard.md), persistence |
 | Retry/worker/event/cache | [Messaging/resilience](integration/messaging-resilience.md), [caching](backend/caching-standard.md) |
 | Deployment/operations | [Delivery](platform/delivery-standard.md), [observability](platform/observability-standard.md), [infrastructure](infrastructure/implementation-standard.md) |

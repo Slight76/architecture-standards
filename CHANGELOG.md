@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 — 2026-10-05
+
+- Added logical CQRS defaults, command/query structure and application execution boundaries.
+- Defined middleware composition, ordering, lifetime/error/security behavior and real-host acceptance tests.
+- Selected first-party OpenAPI generation plus Swagger UI, with transformers, audience/version organization, exposure policy and contract-generation checks.
+- Added ADR-0025 through ADR-0027 and 12 rules; retained conditional browser CORS guidance.
+- Updated agent reading paths and application baseline templates.
+
 ## 0.2.0 — 2026-10-05
 
 - Added detailed implementation standards across all nine domains, plus an agent execution/evidence protocol.

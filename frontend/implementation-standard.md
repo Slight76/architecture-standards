@@ -1,6 +1,6 @@
 # Frontend structure, state, and data access
 
-Baseline: 0.2.0 recommended draft. Applies when: an application uses the React/TypeScript client profile
+Baseline: 0.3.0 recommended draft. Applies when: an application uses the React/TypeScript client profile
 
 Decision: [ADR-0017](../adr/0017-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

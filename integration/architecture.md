@@ -1,6 +1,6 @@
 # Integration architecture
 
-Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0006](../adr/0006-integration.md).
+Baseline: 0.3.0 recommended draft. Scope/decision: [ADR-0006](../adr/0006-integration.md).
 
 ## Purpose
 

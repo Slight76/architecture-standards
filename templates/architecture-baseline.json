@@ -1,7 +1,7 @@
 {
   "standardsRepository": "https://github.com/Slight76/architecture-standards",
   "standardsRevision": "REPLACE_WITH_40_CHARACTER_COMMIT_SHA",
-  "baselineVersion": "0.2.0",
+  "baselineVersion": "0.3.0",
   "solutionDocument": "docs/solution-architecture.md",
   "applicationKind": "frontend",
   "adoptionRecord": {

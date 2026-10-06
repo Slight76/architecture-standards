@@ -1,6 +1,6 @@
 # Schema delivery and recovery
 
-Baseline: 0.2.0 recommended draft. Applies when: a solution changes or operates a production database
+Baseline: 0.3.0 recommended draft. Applies when: a solution changes or operates a production database
 
 Decision: [ADR-0019](../adr/0019-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

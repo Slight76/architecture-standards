@@ -1,6 +1,6 @@
 # Infrastructure architecture
 
-Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0008](../adr/0008-infrastructure.md).
+Baseline: 0.3.0 recommended draft. Scope/decision: [ADR-0008](../adr/0008-infrastructure.md).
 
 ## Purpose
 

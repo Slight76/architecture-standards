@@ -1,6 +1,6 @@
 # Frontend architecture
 
-Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0003](../adr/0003-frontend.md).
+Baseline: 0.3.0 recommended draft. Scope/decision: [ADR-0003](../adr/0003-frontend.md).
 
 ## Purpose
 

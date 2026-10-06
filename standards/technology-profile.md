@@ -1,6 +1,6 @@
 # Recommended technology profile
 
-Status: Proposed; effective for applications that adopt v0.2.0 and select this profile. Version pins must be resolved against supported vendor releases at template creation and committed; this document intentionally does not invent package versions.
+Status: Proposed; effective for applications that adopt v0.3.0 and select this profile. Version pins must be resolved against supported vendor releases at template creation and committed; this document intentionally does not invent package versions.
 
 | Responsibility | Default | Alternative trigger |
 | --- | --- | --- |
@@ -11,6 +11,8 @@ Status: Proposed; effective for applications that adopt v0.2.0 and select this p
 | Runtime validation | Zod | Contract-generated validator or compatible established library |
 | UI components | Adopt one maintained accessible design system per solution | Existing enterprise system; do not mix libraries arbitrarily |
 | Backend | Supported ASP.NET Core LTS profile | Workload or enterprise platform constraints |
+| Application use cases | Logical CQRS in one backend/store | Separate projections/stores through a justified ADR |
+| API documentation | First-party ASP.NET OpenAPI + Swagger UI | One alternative generator/UI with equivalent evidence |
 | Persistence | EF Core + compatible PostgreSQL provider | Measured query needs through SQL/Dapper ports |
 | Relational engine | Supported PostgreSQL | Existing SQL Server/other enterprise requirement with equivalent controls |
 | Testing | xUnit; Vitest/Testing Library; Playwright | Existing equivalent tested stack |
