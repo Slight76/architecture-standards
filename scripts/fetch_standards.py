@@ -25,7 +25,7 @@ def main(argv=None):
     try:
         if not (dest/'.git').exists():
             git('clone', '--no-checkout', '--', repo, str(dest))
-        git('fetch', 'origin', rev, cwd=dest)
+        git('fetch', repo, rev, cwd=dest)
         git('-c', 'advice.detachedHead=false', 'checkout', '--detach', rev, cwd=dest)
     except (subprocess.CalledProcessError, OSError) as exc:
         print(f'Could not retrieve standards revision {rev}: {exc}')
