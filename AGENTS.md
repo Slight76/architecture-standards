@@ -23,6 +23,8 @@ Read this file, [principles](ARCHITECTURE-PRINCIPLES.md), [adoption](governance/
 
 Accepted ADRs record explicit owner decisions. Proposed ADRs specify the recommended profile; after a solution adopts the baseline, agents follow its applicable defaults without repeatedly asking about routine implementation choices. Adoption does not change historical ADR approval status. Do not invent business targets or silently weaken rules. An exception requires scope, approval evidence, expiry, and remediation ownership.
 
+Consuming repos copy the [consumer kit](consumer-kit/README.md) so agents find this handbook at the pinned commit.
+
 Read the exact standards commit identified by architecture-baseline.json. Do not replace it with latest main. If unavailable, report the policy dependency and continue only independent work. Application-local instructions and current task authorization remain relevant. Raise contradictions explicitly.
 
 ## Execution and evidence

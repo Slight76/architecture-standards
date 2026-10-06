@@ -1,1 +1,1 @@
-Read [AGENTS.md](../AGENTS.md) for task-specific standards, decision authority, and verification. Do not duplicate policy here. For consuming application repos, use the baseline and bootstrap templates so the standards revision is explicit.
+Read [AGENTS.md](../AGENTS.md) for task-specific standards, decision authority, and verification. Do not duplicate policy here. For consuming application repos, use the baseline and bootstrap templates so the standards revision is explicit, and see [consumer-kit](../consumer-kit/README.md) for ready-to-copy agent files.

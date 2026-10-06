@@ -86,5 +86,18 @@ class DocumentationTests(unittest.TestCase):
         file=self.root/'security/cors-standard.md'
         file.write_text(file.read_text().replace('| CORS-001 |','| Removed |'))
         self.assertTrue(any('missing from document' in e for e in docs.validate(self.root)))
+    def test_claude_shim_must_import_agents(self):
+        (self.root/'CLAUDE.md').write_text('Standalone policy\n')
+        self.assertTrue(any('CLAUDE.md must start' in e for e in docs.validate(self.root)))
+    def test_skill_copy_drift(self):
+        with (self.root/'.claude/skills/architecture-standards/SKILL.md').open('a') as f:f.write('\ndrift\n')
+        self.assertTrue(any('out of sync' in e for e in docs.validate(self.root)))
+    def test_kit_snippet_requires_pin_rule(self):
+        file=self.root/'consumer-kit/AGENTS.md.snippet'
+        file.write_text(file.read_text().replace('Never use latest `main`.',''))
+        self.assertTrue(any('lacks' in e for e in docs.validate(self.root)))
+    def test_missing_agent_file(self):
+        (self.root/'consumer-kit/README.md').unlink()
+        self.assertTrue(any('Missing agent file' in e for e in docs.validate(self.root)))
 
 if __name__ == '__main__':unittest.main()

@@ -7,5 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - run: python3 scripts/sync_skills.py --check
       - run: python3 scripts/validate.py
       - run: python3 -m unittest discover -s tests -v
