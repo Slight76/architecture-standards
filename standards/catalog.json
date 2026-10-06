@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "status": "recommended-draft",
   "rules": [
     {
@@ -991,6 +991,126 @@
       "document": "backend/caching-standard.md",
       "status": "Proposed",
       "applies_when": "a solution caches business or identity-related data"
+    },
+    {
+      "id": "CQRS-001",
+      "domain": "backend",
+      "statement": "Business use cases MUST distinguish commands from queries without requiring separate stores or a mediator.",
+      "verification": "Use-case classification and handler dependency review",
+      "adr": "ADR-0025",
+      "document": "backend/cqrs-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "CQRS-002",
+      "domain": "backend",
+      "statement": "Queries MUST NOT mutate authoritative business state; commands MUST own atomic invariant enforcement.",
+      "verification": "Read-side no-write and command rollback/concurrency tests",
+      "adr": "ADR-0025",
+      "document": "backend/cqrs-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "CQRS-003",
+      "domain": "backend",
+      "statement": "Separate read models MUST declare consistency, authorization, lag, and rebuild behavior.",
+      "verification": "Replica/projection lag, tenant isolation and rebuild tests when applicable",
+      "adr": "ADR-0025",
+      "document": "backend/cqrs-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "CQRS-004",
+      "domain": "backend",
+      "statement": "Application pipelines MUST preserve authorization, replay, and transaction semantics across HTTP and worker callers.",
+      "verification": "API/worker equivalence, replay authorization and single-transaction tests",
+      "adr": "ADR-0025",
+      "document": "backend/cqrs-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "MW-001",
+      "domain": "backend",
+      "statement": "Backend hosts MUST centralize visible service/pipeline/endpoint composition and preserve documented ordering dependencies.",
+      "verification": "Real-host preflight, authentication and endpoint execution tests",
+      "adr": "ADR-0026",
+      "document": "backend/middleware-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "MW-002",
+      "domain": "backend",
+      "statement": "Custom middleware MUST respect DI lifetimes, cancellation, response-start and streaming behavior.",
+      "verification": "Scoped-lifetime, disconnect and streaming failure tests",
+      "adr": "ADR-0026",
+      "document": "backend/middleware-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "MW-003",
+      "domain": "backend",
+      "statement": "Exception, validation, authentication and throttling paths MUST retain safe consistent HTTP error behavior.",
+      "verification": "500/400/401/403/429 body, challenge and logging assertions",
+      "adr": "ADR-0026",
+      "document": "backend/middleware-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "MW-004",
+      "domain": "backend",
+      "statement": "Cookie mutation and identity-based throttling controls MUST be enforced by tested endpoint/pipeline behavior.",
+      "verification": "Invalid antiforgery and verified-identity quota tests",
+      "adr": "ADR-0026",
+      "document": "backend/middleware-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "OAS-001",
+      "domain": "backend",
+      "statement": "Backends MUST use one declared OpenAPI generator with stable document/audience/version ownership.",
+      "verification": "Document inclusion, duplicate operationId and reproducibility tests",
+      "adr": "ADR-0027",
+      "document": "backend/openapi-swagger-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "OAS-002",
+      "domain": "backend",
+      "statement": "OpenAPI responses, schemas and security metadata MUST match implemented endpoint behavior.",
+      "verification": "Runtime-contract parity, example validation and anonymous/protected operation tests",
+      "adr": "ADR-0027",
+      "document": "backend/openapi-swagger-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "OAS-003",
+      "domain": "backend",
+      "statement": "Swagger UI and document exposure MUST follow explicit environment policy without weakening API security.",
+      "verification": "Production UI/JSON exposure, proxy-path and auth/CSRF tests",
+      "adr": "ADR-0027",
+      "document": "backend/openapi-swagger-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "OAS-004",
+      "domain": "backend",
+      "statement": "Build-time contract generation MUST be isolated from production effects and pass consumer generation checks.",
+      "verification": "Offline-safe generation, lint/diff and generated client build",
+      "adr": "ADR-0027",
+      "document": "backend/openapi-swagger-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Implementation standards index
 
-Version 0.2.0 recommended baseline. All detailed defaults are actionable after adoption; proposed status records approval honestly and does not mean agents should improvise alternatives.
+Version 0.3.0 recommended baseline. All detailed defaults are actionable after adoption; proposed status records approval honestly and does not mean agents should improvise alternatives.
 
 | Document | Governing ADR |
 | --- | --- |
@@ -26,3 +26,11 @@ Version 0.2.0 recommended baseline. All detailed defaults are actionable after a
 | [Cache selection, ownership, and invalidation](../backend/caching-standard.md) | [ADR-0016](../adr/0016-implementation-decisions.md) |
 
 The [catalog](catalog.json) maps stable rule IDs to requirements, applicability, governing decision, and verification. [Sources](sources.md) separate protocol facts from our policy choices.
+
+## Backend execution and documentation
+
+| Document | Governing ADR |
+| --- | --- |
+| [CQRS and application execution](../backend/cqrs-standard.md) | [ADR-0025](../adr/0025-cqrs.md) |
+| [HTTP middleware and host composition](../backend/middleware-standard.md) | [ADR-0026](../adr/0026-middleware.md) |
+| [OpenAPI generation and Swagger UI structure](../backend/openapi-swagger-standard.md) | [ADR-0027](../adr/0027-openapi-swagger.md) |

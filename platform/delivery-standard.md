@@ -1,6 +1,6 @@
 # Build, release, and supply-chain controls
 
-Baseline: 0.2.0 recommended draft. Applies when: an application or infrastructure artifact is delivered
+Baseline: 0.3.0 recommended draft. Applies when: an application or infrastructure artifact is delivered
 
 Decision: [ADR-0020](../adr/0020-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

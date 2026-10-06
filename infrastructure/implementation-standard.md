@@ -1,6 +1,6 @@
 # Network, compute, configuration, and infrastructure lifecycle
 
-Baseline: 0.2.0 recommended draft. Applies when: a solution provisions runtime infrastructure
+Baseline: 0.3.0 recommended draft. Applies when: a solution provisions runtime infrastructure
 
 Decision: [ADR-0022](../adr/0022-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

@@ -1,6 +1,6 @@
 # CORS and browser origin policy
 
-Baseline: 0.2.0 recommended draft. Applies when: a browser interacts with an API
+Baseline: 0.3.0 recommended draft. Applies when: a browser interacts with an API
 
 Decision: [ADR-0014](../adr/0014-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 
@@ -73,3 +73,7 @@ Source: [Microsoft CORS guidance](https://learn.microsoft.com/en-us/aspnet/core/
 ## Exceptions
 
 Use the [exception record](../templates/exception.md) for a departure. Record affected rules, scope, compensating controls, approval evidence, expiry, and migration path. Agents must not silently replace defaults.
+
+## Related backend structure
+
+CQRS is a separate application design concern; see [CQRS](../backend/cqrs-standard.md). This browser origin policy remains conditional on deployment and is not a command/query pattern.

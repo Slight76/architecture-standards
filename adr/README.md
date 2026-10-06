@@ -33,3 +33,11 @@ Accepted records capture explicit owner direction. Proposed records expand the r
 | [ADR-0022](0022-implementation-decisions.md) | Requirement-led infrastructure and failure boundaries | Proposed |
 | [ADR-0023](0023-implementation-decisions.md) | Measurable solution and enterprise ownership | Proposed |
 | [ADR-0024](0024-implementation-decisions.md) | Rule-scoped agent execution and truthful evidence | Proposed |
+
+## Backend decisions for v0.3
+
+| ADR | Decision | Status |
+| --- | --- |
+| [ADR-0025](0025-cqrs.md) | CQRS and application execution | Proposed |
+| [ADR-0026](0026-middleware.md) | HTTP middleware and host composition | Proposed |
+| [ADR-0027](0027-openapi-swagger.md) | OpenAPI generation and Swagger UI structure | Proposed |

@@ -1,6 +1,6 @@
 # Threat modeling and secure application behavior
 
-Baseline: 0.2.0 recommended draft. Applies when: an application accepts untrusted data or handles protected information
+Baseline: 0.3.0 recommended draft. Applies when: an application accepts untrusted data or handles protected information
 
 Decision: [ADR-0015](../adr/0015-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

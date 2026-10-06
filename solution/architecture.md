@@ -1,6 +1,6 @@
 # Solution architecture
 
-Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0002](../adr/0002-solution.md).
+Baseline: 0.3.0 recommended draft. Scope/decision: [ADR-0002](../adr/0002-solution.md).
 
 ## Purpose
 

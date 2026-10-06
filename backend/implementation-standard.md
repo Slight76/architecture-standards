@@ -1,6 +1,6 @@
 # Backend modules, use cases, and dependencies
 
-Baseline: 0.2.0 recommended draft. Applies when: an application uses the ASP.NET Core backend profile
+Baseline: 0.3.0 recommended draft. Applies when: an application uses the ASP.NET Core backend profile
 
 Decision: [ADR-0018](../adr/0018-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 
@@ -55,3 +55,7 @@ Architecture checks assert forbidden assembly/package dependencies and the compo
 ## Exceptions
 
 Use the [exception record](../templates/exception.md) for a departure. Record affected rules, scope, compensating controls, approval evidence, expiry, and migration path. Agents must not silently replace defaults.
+
+## Related backend structure
+
+Use [CQRS execution](cqrs-standard.md) for command/query ownership, [middleware composition](middleware-standard.md) for the HTTP host, and [OpenAPI/Swagger](openapi-swagger-standard.md) for contract/UI organization. CQRS is compatible with resource-oriented HTTP and does not require separate databases.

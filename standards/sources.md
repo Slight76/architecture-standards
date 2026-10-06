@@ -23,3 +23,9 @@ Checked 2026-10-05. These primary sources ground protocol/framework facts. Enter
 | CI security | [GitHub secure use](https://docs.github.com/en/actions/reference/security/secure-use) | Workflow permissions and untrusted inputs |
 | Telemetry | [OpenTelemetry](https://opentelemetry.io/docs/concepts/signals/) | Signal concepts |
 | Accessibility | [WCAG 2.2](https://www.w3.org/TR/WCAG22/) | Accessibility target and testing scope |
+
+| CQRS | [Microsoft pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs) | Logical separation and distributed-model tradeoffs |
+| Middleware | [ASP.NET Core pipeline](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-10.0) | Ordering and response behavior |
+| Rate limiting | [ASP.NET Core limiter](https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?view=aspnetcore-10.0) | Endpoint/identity ordering |
+| OpenAPI generation | [Overview](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview?view=aspnetcore-10.0), [customization](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/customize-openapi?view=aspnetcore-10.0) | Generator and transformers |
+| Swagger UI | [Integration](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/using-openapi-documents?view=aspnetcore-10.0) | Separate UI package and document route |

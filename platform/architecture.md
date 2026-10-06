@@ -1,6 +1,6 @@
 # Platform architecture
 
-Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0007](../adr/0007-platform.md).
+Baseline: 0.3.0 recommended draft. Scope/decision: [ADR-0007](../adr/0007-platform.md).
 
 ## Purpose
 

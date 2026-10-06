@@ -1,6 +1,6 @@
 # Logical and physical database design
 
-Baseline: 0.2.0 recommended draft. Applies when: a solution persists structured business data
+Baseline: 0.3.0 recommended draft. Applies when: a solution persists structured business data
 
 Decision: [ADR-0019](../adr/0019-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

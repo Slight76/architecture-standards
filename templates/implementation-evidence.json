@@ -1,6 +1,6 @@
 {
   "standardsRevision": "REPLACE_WITH_40_CHARACTER_COMMIT_SHA",
-  "baselineVersion": "0.2.0",
+  "baselineVersion": "0.3.0",
   "applicationCommit": "REPLACE_WITH_40_CHARACTER_COMMIT_SHA",
   "checks": [
     {

@@ -1,6 +1,6 @@
 # Idempotency, messaging, and resilience
 
-Baseline: 0.2.0 recommended draft. Applies when: operations retry, publish events, or call remote dependencies
+Baseline: 0.3.0 recommended draft. Applies when: operations retry, publish events, or call remote dependencies
 
 Decision: [ADR-0016](../adr/0016-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

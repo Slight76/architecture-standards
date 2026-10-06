@@ -1,6 +1,6 @@
 # Backend architecture
 
-Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0004](../adr/0004-backend.md).
+Baseline: 0.3.0 recommended draft. Scope/decision: [ADR-0004](../adr/0004-backend.md).
 
 ## Purpose
 
@@ -29,3 +29,9 @@ Read [governance](../governance/adoption.md). Proposed rules are not approved me
 - [Backend modules, use cases, and dependencies](implementation-standard.md)
 - [Persistence, transactions, and query behavior](persistence-standard.md)
 - [Cache selection, ownership, and invalidation](caching-standard.md)
+
+- [CQRS and application execution](cqrs-standard.md)
+
+- [HTTP middleware and host composition](middleware-standard.md)
+
+- [OpenAPI generation and Swagger UI structure](openapi-swagger-standard.md)

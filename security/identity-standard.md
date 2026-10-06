@@ -1,6 +1,6 @@
 # Identity, authorization, and session design
 
-Baseline: 0.2.0 recommended draft. Applies when: an application authenticates users or workloads
+Baseline: 0.3.0 recommended draft. Applies when: an application authenticates users or workloads
 
 Decision: [ADR-0015](../adr/0015-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 

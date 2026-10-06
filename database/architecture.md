@@ -1,6 +1,6 @@
 # Database architecture
 
-Baseline: 0.2.0 recommended draft. Scope/decision: [ADR-0005](../adr/0005-database.md).
+Baseline: 0.3.0 recommended draft. Scope/decision: [ADR-0005](../adr/0005-database.md).
 
 ## Purpose
 

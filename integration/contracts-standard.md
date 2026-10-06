@@ -1,6 +1,6 @@
 # Contract ownership, generation, and compatibility
 
-Baseline: 0.2.0 recommended draft. Applies when: separate repositories exchange HTTP contracts
+Baseline: 0.3.0 recommended draft. Applies when: separate repositories exchange HTTP contracts
 
 Decision: [ADR-0013](../adr/0013-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 
@@ -47,3 +47,7 @@ Source: [OpenAPI 3.1.1](https://spec.openapis.org/oas/v3.1.1.html). Artifact lif
 ## Exceptions
 
 Use the [exception record](../templates/exception.md) for a departure. Record affected rules, scope, compensating controls, approval evidence, expiry, and migration path. Agents must not silently replace defaults.
+
+## Related backend structure
+
+For backend document registration, transformers, audience/version grouping and Swagger UI exposure, follow the [OpenAPI/Swagger standard](../backend/openapi-swagger-standard.md).

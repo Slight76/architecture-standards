@@ -1,6 +1,6 @@
 # Persistence, transactions, and query behavior
 
-Baseline: 0.2.0 recommended draft. Applies when: a backend accesses relational data
+Baseline: 0.3.0 recommended draft. Applies when: a backend accesses relational data
 
 Decision: [ADR-0018](../adr/0018-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 
