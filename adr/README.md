@@ -4,7 +4,7 @@ Accepted records capture explicit owner direction. Proposed records expand the r
 
 | ADR | Decision | Status |
 | --- | --- | --- |
-| [ADR-0001](0001-enterprise.md) | Enterprise architecture | Accepted |
+| [ADR-0001](0001-enterprise.md) | Enterprise architecture (historical) | Superseded by ADR-0028 |
 | [ADR-0002](0002-solution.md) | Solution architecture | Accepted |
 | [ADR-0003](0003-frontend.md) | Frontend architecture | Proposed |
 | [ADR-0004](0004-backend.md) | Backend architecture | Proposed |
@@ -31,13 +31,24 @@ Accepted records capture explicit owner direction. Proposed records expand the r
 | [ADR-0020](0020-implementation-decisions.md) | Independent immutable delivery with boundary-specific verification | Proposed |
 | [ADR-0021](0021-implementation-decisions.md) | Operational signals and explicit service objectives | Proposed |
 | [ADR-0022](0022-implementation-decisions.md) | Requirement-led infrastructure and failure boundaries | Proposed |
-| [ADR-0023](0023-implementation-decisions.md) | Measurable solution and enterprise ownership | Proposed |
+| [ADR-0023](0023-implementation-decisions.md) | Measurable solution and ownership (historical) | Superseded by ADR-0028 |
 | [ADR-0024](0024-implementation-decisions.md) | Rule-scoped agent execution and truthful evidence | Proposed |
 
 ## Backend decisions for v0.3
 
 | ADR | Decision | Status |
-| --- | --- |
+| --- | --- | --- |
 | [ADR-0025](0025-cqrs.md) | CQRS and application execution | Proposed |
 | [ADR-0026](0026-middleware.md) | HTTP middleware and host composition | Proposed |
 | [ADR-0027](0027-openapi-swagger.md) | OpenAPI generation and Swagger UI structure | Proposed |
+
+## Repository split decisions for v1.0.0
+
+| ADR | Decision | Status |
+| --- | --- | --- |
+| [ADR-0028](0028-retire-enterprise-layer.md) | Retire the enterprise layer; team operating model in standards-marketplace | Accepted |
+| [ADR-0029](0029-split-into-domain-handbooks.md) | Split into five domain handbooks plus a marketplace | Accepted |
+| [ADR-0030](0030-multi-repository-baseline.md) | Multi-repository baseline (`standards[]`, schema v2) | Accepted |
+| [ADR-0031](0031-skill-distribution.md) | Distribute handbooks as Agent Plugins skills via marketplace and gh skill | Accepted |
+
+Historic records keep their original wording; amendments are noted inline. Rule IDs are never renamed.

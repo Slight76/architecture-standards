@@ -1,9 +1,15 @@
 # Changelog
 
-## Unreleased
+## 1.0.0 - 2026-10-06
 
-- Added `CLAUDE.md` (`@AGENTS.md` import), a `consumer-kit/` for Copilot, Claude Code and Codex consumers, a shared `architecture-standards` skill with `scripts/sync_skills.py` drift check, `scripts/fetch_standards.py`, and validator checks for these files.
+Repository split (ADR-0028..0031). History before this release is tagged `v0.3.0-pre-split`.
 
+- Retired the "enterprise" layer; the team operating model, governance rules (GOV-*), templates, consumer kit, and tooling now live in [standards-marketplace](https://github.com/Slight76/standards-marketplace). EA-001..EA-006 are Superseded by GOV-001.
+- Moved engineering, operations, data, and security standards to their own handbooks; see [MOVED.md](MOVED.md) for every old path and its new home.
+- Remaining documents moved under `docs/` with frontmatter; rule IDs unchanged. Catalog is now `catalog/catalog.json` (44 rules: SA, FE, UX, BE, CQRS, MW, OAS, API, CON, EVT, RES, INT) with `externalDecisions` pointing at marketplace ADR-0001.
+- Added `plugin.json` (Agent Plugins 1.0) and `skills/architecture-standards/`; removed mirrored `.agents/`, `.claude/`, `.github/skills/` copies and `scripts/sync_skills.py`.
+- CI uses the reusable `standards-marketplace` docs-lint workflow. Added MIT license; repository is public.
+- Amended ADR-0001..0012 and ADR-0022 with historical notes; ADR-0001 and ADR-0023 superseded by ADR-0028.
 ## 0.3.0 — 2026-10-05
 
 - Added logical CQRS defaults, command/query structure and application execution boundaries.

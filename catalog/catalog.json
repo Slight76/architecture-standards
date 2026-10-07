@@ -1,0 +1,447 @@
+{
+  "version": "1.0.0",
+  "status": "recommended-draft",
+  "repository": "Slight76/architecture-standards",
+  "rules": [
+    {
+      "id": "SA-001",
+      "domain": "solution",
+      "statement": "Every production solution MUST document context, deployables, repositories, owners, and external dependencies.",
+      "verification": "Solution release review",
+      "adr": "ADR-0002",
+      "document": "docs/solution-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "SA-002",
+      "domain": "solution",
+      "statement": "Trust boundaries, data flows, failure modes, and deployment topology MUST be documented.",
+      "verification": "Threat and deployment review",
+      "adr": "ADR-0002",
+      "document": "docs/solution-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "SA-003",
+      "domain": "solution",
+      "statement": "Solutions MUST pin their standards baseline and record scoped exceptions.",
+      "verification": "Baseline and exception review",
+      "adr": "ADR-0002",
+      "document": "docs/solution-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "FE-001",
+      "domain": "frontend",
+      "statement": "Frontend and backend MUST have separate application repositories and release pipelines.",
+      "verification": "Repository and pipeline review",
+      "adr": "ADR-0010",
+      "document": "docs/frontend-architecture.md",
+      "status": "Accepted",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "FE-002",
+      "domain": "frontend",
+      "statement": "Features MUST NOT import another feature\u2019s internal implementation; use its documented public API or app-level composition.",
+      "verification": "Import boundary lint",
+      "adr": "ADR-0003",
+      "document": "docs/frontend-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "FE-003",
+      "domain": "frontend",
+      "statement": "HTTP calls MUST pass through the approved API client layer; generated files MUST NOT be manually edited.",
+      "verification": "Import lint and regeneration diff",
+      "adr": "ADR-0003",
+      "document": "docs/frontend-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "FE-004",
+      "domain": "frontend",
+      "statement": "Business-specific logic MUST stay in its feature and shared code MUST NOT depend on features.",
+      "verification": "Import boundary lint",
+      "adr": "ADR-0003",
+      "document": "docs/frontend-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "FE-005",
+      "domain": "frontend",
+      "statement": "UI MUST provide accessible keyboard navigation, semantic controls, and loading, empty, and failure states.",
+      "verification": "Accessibility and component checks",
+      "adr": "ADR-0003",
+      "document": "docs/frontend-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "BE-001",
+      "domain": "backend",
+      "statement": "Domain MUST NOT depend on Application, Infrastructure, API, HTTP, or persistence frameworks.",
+      "verification": "Assembly and package architecture tests",
+      "adr": "ADR-0004",
+      "document": "docs/backend-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "BE-002",
+      "domain": "backend",
+      "statement": "Application MUST NOT depend on Infrastructure or API.",
+      "verification": "Assembly architecture tests",
+      "adr": "ADR-0004",
+      "document": "docs/backend-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "BE-003",
+      "domain": "backend",
+      "statement": "Infrastructure MUST implement ports owned by Application or Domain.",
+      "verification": "Architecture tests and design review",
+      "adr": "ADR-0004",
+      "document": "docs/backend-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "BE-004",
+      "domain": "backend",
+      "statement": "Endpoints MUST delegate business decisions to application/domain code and enforce documented authorization.",
+      "verification": "API tests and endpoint review",
+      "adr": "ADR-0004",
+      "document": "docs/backend-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "BE-005",
+      "domain": "backend",
+      "statement": "Module data MUST be accessed through its owned interfaces; cross-module writes MUST NOT bypass ownership.",
+      "verification": "Module dependency tests and data review",
+      "adr": "ADR-0004",
+      "document": "docs/backend-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "INT-001",
+      "domain": "integration",
+      "statement": "HTTP APIs MUST publish versioned OpenAPI artifacts and use a documented error contract.",
+      "verification": "Contract publication and API tests",
+      "adr": "ADR-0006",
+      "document": "docs/integration-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "INT-002",
+      "domain": "integration",
+      "statement": "Breaking contract changes MUST retain a documented migration and supported compatibility window.",
+      "verification": "Contract diff and consumer compatibility tests",
+      "adr": "ADR-0006",
+      "document": "docs/integration-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "INT-003",
+      "domain": "integration",
+      "statement": "Mutation retries MUST account for idempotency and ambiguous network outcomes.",
+      "verification": "Retry and duplicate-delivery tests",
+      "adr": "ADR-0006",
+      "document": "docs/integration-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "INT-004",
+      "domain": "integration",
+      "statement": "Trace context MUST propagate across supported boundaries without secrets or sensitive payloads in telemetry.",
+      "verification": "Trace integration and redaction checks",
+      "adr": "ADR-0006",
+      "document": "docs/integration-architecture.md",
+      "status": "Proposed",
+      "applies_when": "the solution includes this domain; assess the linked architecture scope"
+    },
+    {
+      "id": "API-001",
+      "domain": "integration",
+      "statement": "APIs MUST follow the resource, method, representation, and status conventions in this document.",
+      "verification": "HTTP contract tests for successful and failing operations",
+      "adr": "ADR-0013",
+      "document": "docs/http-api-standard.md",
+      "status": "Proposed",
+      "applies_when": "an application exposes an HTTP API"
+    },
+    {
+      "id": "API-002",
+      "domain": "integration",
+      "statement": "Collection endpoints MUST bound results and allowlist query operations.",
+      "verification": "Limit, cursor tampering, tenant scope, and sort-injection tests",
+      "adr": "ADR-0013",
+      "document": "docs/http-api-standard.md",
+      "status": "Proposed",
+      "applies_when": "an application exposes an HTTP API"
+    },
+    {
+      "id": "API-003",
+      "domain": "integration",
+      "statement": "Application errors MUST use the documented problem contract and stable codes.",
+      "verification": "Validate media type, status agreement, codes, and redaction",
+      "adr": "ADR-0013",
+      "document": "docs/http-api-standard.md",
+      "status": "Proposed",
+      "applies_when": "an application exposes an HTTP API"
+    },
+    {
+      "id": "API-004",
+      "domain": "integration",
+      "statement": "Updates vulnerable to lost writes MUST enforce an atomic concurrency policy.",
+      "verification": "Two competing updates: one succeeds and the stale write fails",
+      "adr": "ADR-0013",
+      "document": "docs/http-api-standard.md",
+      "status": "Proposed",
+      "applies_when": "an application exposes an HTTP API"
+    },
+    {
+      "id": "CON-001",
+      "domain": "integration",
+      "statement": "API consumers MUST pin reproducibly generated client contracts to immutable artifacts.",
+      "verification": "Clean regeneration diff and checksum verification",
+      "adr": "ADR-0013",
+      "document": "docs/contracts-standard.md",
+      "status": "Proposed",
+      "applies_when": "separate repositories exchange HTTP contracts"
+    },
+    {
+      "id": "CON-002",
+      "domain": "integration",
+      "statement": "Provider changes MUST assess structural and behavioral compatibility with supported consumers.",
+      "verification": "Contract diff plus consumer compatibility evidence",
+      "adr": "ADR-0013",
+      "document": "docs/contracts-standard.md",
+      "status": "Proposed",
+      "applies_when": "separate repositories exchange HTTP contracts"
+    },
+    {
+      "id": "CON-003",
+      "domain": "integration",
+      "statement": "Every operation MUST document auth, validation, errors, concurrency, and retry behavior.",
+      "verification": "OpenAPI validation and operation review",
+      "adr": "ADR-0013",
+      "document": "docs/contracts-standard.md",
+      "status": "Proposed",
+      "applies_when": "separate repositories exchange HTTP contracts"
+    },
+    {
+      "id": "RES-001",
+      "domain": "integration",
+      "statement": "Outbound calls MUST declare bounded deadlines and operation-safe retry behavior.",
+      "verification": "Timeout, cancellation, and retry-budget tests",
+      "adr": "ADR-0016",
+      "document": "docs/messaging-resilience.md",
+      "status": "Proposed",
+      "applies_when": "operations retry, publish events, or call remote dependencies"
+    },
+    {
+      "id": "RES-002",
+      "domain": "integration",
+      "statement": "Replay-sensitive mutations MUST implement a durable scoped idempotency protocol.",
+      "verification": "Concurrent duplicate, changed payload, restart, and expiry tests",
+      "adr": "ADR-0016",
+      "document": "docs/messaging-resilience.md",
+      "status": "Proposed",
+      "applies_when": "operations retry, publish events, or call remote dependencies"
+    },
+    {
+      "id": "EVT-001",
+      "domain": "integration",
+      "statement": "Reliable database-to-event publication MUST coordinate through an outbox or documented equivalent.",
+      "verification": "Crash after commit/before publish and after publish tests",
+      "adr": "ADR-0016",
+      "document": "docs/messaging-resilience.md",
+      "status": "Proposed",
+      "applies_when": "operations retry, publish events, or call remote dependencies"
+    },
+    {
+      "id": "EVT-002",
+      "domain": "integration",
+      "statement": "Consumers MUST handle duplicates, poison messages, shutdown, and authorized redrive.",
+      "verification": "Inbox, dead-letter, redrive, and shutdown integration tests",
+      "adr": "ADR-0016",
+      "document": "docs/messaging-resilience.md",
+      "status": "Proposed",
+      "applies_when": "operations retry, publish events, or call remote dependencies"
+    },
+    {
+      "id": "UX-001",
+      "domain": "frontend",
+      "statement": "User journeys MUST support keyboard, focus, labels, error announcements, and the adopted accessibility target.",
+      "verification": "Automated accessibility plus manual keyboard/screen-reader evidence",
+      "adr": "ADR-0017",
+      "document": "docs/frontend-accessibility-performance.md",
+      "status": "Proposed",
+      "applies_when": "a solution presents a browser UI"
+    },
+    {
+      "id": "UX-002",
+      "domain": "frontend",
+      "statement": "Applications MUST define measured performance budgets and asset/configuration caching behavior.",
+      "verification": "Production-build budget report and stale-asset deployment test",
+      "adr": "ADR-0017",
+      "document": "docs/frontend-accessibility-performance.md",
+      "status": "Proposed",
+      "applies_when": "a solution presents a browser UI"
+    },
+    {
+      "id": "SA-004",
+      "domain": "solution",
+      "statement": "Solution designs MUST resolve cross-domain implementation choices and document measurable quality scenarios.",
+      "verification": "Design packet with baseline, decision table, and acceptance scenarios",
+      "adr": "ADR-0023",
+      "document": "docs/solution-design-standard.md",
+      "status": "Proposed",
+      "applies_when": "multiple applications form a business solution"
+    },
+    {
+      "id": "SA-005",
+      "domain": "solution",
+      "statement": "Production readiness MUST include failure, compatibility, security, operations, and recovery evidence.",
+      "verification": "Readiness review linked to actual test reports/runbooks",
+      "adr": "ADR-0023",
+      "document": "docs/solution-design-standard.md",
+      "status": "Proposed",
+      "applies_when": "multiple applications form a business solution"
+    },
+    {
+      "id": "CQRS-001",
+      "domain": "backend",
+      "statement": "Business use cases MUST distinguish commands from queries without requiring separate stores or a mediator.",
+      "verification": "Use-case classification and handler dependency review",
+      "adr": "ADR-0025",
+      "document": "docs/cqrs-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "CQRS-002",
+      "domain": "backend",
+      "statement": "Queries MUST NOT mutate authoritative business state; commands MUST own atomic invariant enforcement.",
+      "verification": "Read-side no-write and command rollback/concurrency tests",
+      "adr": "ADR-0025",
+      "document": "docs/cqrs-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "CQRS-003",
+      "domain": "backend",
+      "statement": "Separate read models MUST declare consistency, authorization, lag, and rebuild behavior.",
+      "verification": "Replica/projection lag, tenant isolation and rebuild tests when applicable",
+      "adr": "ADR-0025",
+      "document": "docs/cqrs-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "CQRS-004",
+      "domain": "backend",
+      "statement": "Application pipelines MUST preserve authorization, replay, and transaction semantics across HTTP and worker callers.",
+      "verification": "API/worker equivalence, replay authorization and single-transaction tests",
+      "adr": "ADR-0025",
+      "document": "docs/cqrs-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "MW-001",
+      "domain": "backend",
+      "statement": "Backend hosts MUST centralize visible service/pipeline/endpoint composition and preserve documented ordering dependencies.",
+      "verification": "Real-host preflight, authentication and endpoint execution tests",
+      "adr": "ADR-0026",
+      "document": "docs/middleware-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "MW-002",
+      "domain": "backend",
+      "statement": "Custom middleware MUST respect DI lifetimes, cancellation, response-start and streaming behavior.",
+      "verification": "Scoped-lifetime, disconnect and streaming failure tests",
+      "adr": "ADR-0026",
+      "document": "docs/middleware-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "MW-003",
+      "domain": "backend",
+      "statement": "Exception, validation, authentication and throttling paths MUST retain safe consistent HTTP error behavior.",
+      "verification": "500/400/401/403/429 body, challenge and logging assertions",
+      "adr": "ADR-0026",
+      "document": "docs/middleware-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "MW-004",
+      "domain": "backend",
+      "statement": "Cookie mutation and identity-based throttling controls MUST be enforced by tested endpoint/pipeline behavior.",
+      "verification": "Invalid antiforgery and verified-identity quota tests",
+      "adr": "ADR-0026",
+      "document": "docs/middleware-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "OAS-001",
+      "domain": "backend",
+      "statement": "Backends MUST use one declared OpenAPI generator with stable document/audience/version ownership.",
+      "verification": "Document inclusion, duplicate operationId and reproducibility tests",
+      "adr": "ADR-0027",
+      "document": "docs/openapi-swagger-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "OAS-002",
+      "domain": "backend",
+      "statement": "OpenAPI responses, schemas and security metadata MUST match implemented endpoint behavior.",
+      "verification": "Runtime-contract parity, example validation and anonymous/protected operation tests",
+      "adr": "ADR-0027",
+      "document": "docs/openapi-swagger-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "OAS-003",
+      "domain": "backend",
+      "statement": "Swagger UI and document exposure MUST follow explicit environment policy without weakening API security.",
+      "verification": "Production UI/JSON exposure, proxy-path and auth/CSRF tests",
+      "adr": "ADR-0027",
+      "document": "docs/openapi-swagger-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    },
+    {
+      "id": "OAS-004",
+      "domain": "backend",
+      "statement": "Build-time contract generation MUST be isolated from production effects and pass consumer generation checks.",
+      "verification": "Offline-safe generation, lint/diff and generated client build",
+      "adr": "ADR-0027",
+      "document": "docs/openapi-swagger-standard.md",
+      "status": "Proposed",
+      "applies_when": "the solution uses the ASP.NET Core backend profile; conditional stages follow the linked standard"
+    }
+  ]
+}

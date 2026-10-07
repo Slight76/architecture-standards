@@ -1,8 +1,12 @@
-# ADR-0023: Measurable solution and enterprise ownership
+# ADR-0023: Measurable solution and enterprise ownership (historical)
 
-Status: Proposed
+Status: Superseded
+
+Superseded by: ADR-0028
 
 Date: 2026-10-05
+
+> Amended 2026-10-06: this record predates the v1.0.0 split. "Enterprise" wording is historical; the team-level operating model now lives in [standards-marketplace](https://github.com/Slight76/standards-marketplace/blob/main/governance/team-operating-model.md) (see [ADR-0028](0028-retire-enterprise-layer.md) and [ADR-0029](0029-split-into-domain-handbooks.md)).
 
 ## Context
 
@@ -22,8 +26,8 @@ Owners must supply business inputs and maintain impact records. This does not re
 
 ## Traceability
 
-- [Enterprise governance, portfolio, and technology lifecycle](../enterprise/operating-model.md)
-- [Solution design and production readiness](../solution/design-standard.md)
+- [Enterprise governance, portfolio, and technology lifecycle](https://github.com/Slight76/standards-marketplace/blob/main/governance/team-operating-model.md)
+- [Solution design and production readiness](../docs/solution-design-standard.md)
 
 Rules: EA-004, EA-005, EA-006, SA-004, SA-005.
 

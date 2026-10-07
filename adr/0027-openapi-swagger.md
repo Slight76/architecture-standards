@@ -22,7 +22,7 @@ Package/dialect compatibility and document/runtime parity need tests. Runtime do
 
 ## Traceability
 
-[OpenAPI generation and Swagger UI structure](../backend/openapi-swagger-standard.md). Rules: OAS-001, OAS-002, OAS-003, OAS-004. Related: [backend decisions](0018-implementation-decisions.md), [HTTP/contracts](0013-implementation-decisions.md), [identity](0015-implementation-decisions.md).
+[OpenAPI generation and Swagger UI structure](../docs/openapi-swagger-standard.md). Rules: OAS-001, OAS-002, OAS-003, OAS-004. Related: [backend decisions](0018-implementation-decisions.md), [HTTP/contracts](0013-implementation-decisions.md), [identity](0015-implementation-decisions.md).
 
 ## Verification
 

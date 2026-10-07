@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "architecture-standards",
+  "version": "1.0.0",
+  "description": "Team architecture standards: solution design, frontend/backend architecture, CQRS, middleware, OpenAPI, HTTP APIs, contracts, messaging, and the ADR process.",
+  "author": { "name": "Slight76", "url": "https://github.com/Slight76" },
+  "homepage": "https://github.com/Slight76/architecture-standards",
+  "repository": "https://github.com/Slight76/architecture-standards",
+  "license": "MIT",
+  "keywords": ["standards", "agent-skills", "architecture", "adr", "api-design"]
+}

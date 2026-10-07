@@ -22,8 +22,8 @@ The selected libraries require pinned versions and upgrades. Dependency lint and
 
 ## Traceability
 
-- [Frontend structure, state, and data access](../frontend/implementation-standard.md)
-- [Accessible and resilient user interfaces](../frontend/accessibility-performance.md)
+- [Frontend structure, state, and data access](https://github.com/Slight76/engineering-standards/blob/main/docs/frontend-implementation-standard.md)
+- [Accessible and resilient user interfaces](../docs/frontend-accessibility-performance.md)
 
 Rules: FE-006, FE-007, FE-008, FE-009, UX-001, UX-002.
 

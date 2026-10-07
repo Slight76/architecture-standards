@@ -1,0 +1,34 @@
+---
+title: "Solution architecture"
+status: proposed
+version: 1.0.0
+owner: "@Slight76"
+supersedes: architecture-standards/solution/architecture.md@c1bda3d
+---
+# Solution architecture
+
+Baseline: 1.0.0. Scope/decision: [ADR-0002](../adr/0002-solution.md).
+
+## Purpose
+
+Describe a particular business system using team policies. Link separately deployed frontend, backend, workers, data stores, and external systems.
+
+## Design
+
+Maintain context, container, deployment, and critical sequence views. A context view treats the entire solution as one system; a container view expands applications and stores. Update views when topology or trust boundaries change. Record measurable availability, latency, throughput, RPO, RTO, retention, and capacity requirements with owner approval.
+
+## Rules and verification
+
+| Rule | Requirement | Evidence |
+| --- | --- | --- |
+| SA-001 | Every production solution MUST document context, deployables, repositories, owners, and external dependencies. | Solution release review |
+| SA-002 | Trust boundaries, data flows, failure modes, and deployment topology MUST be documented. | Threat and deployment review |
+| SA-003 | Solutions MUST pin their standards baseline and record scoped exceptions. | Baseline and exception review |
+
+## Adoption
+
+Read [governance](https://github.com/Slight76/engineering-standards/blob/main/docs/adoption-process.md). Proposed rules are not approved merely because they use MUST. Record solution-specific choices, tests, and exceptions in the pinned baseline.
+
+## Implementation standards
+
+- [Solution design and production readiness](solution-design-standard.md)

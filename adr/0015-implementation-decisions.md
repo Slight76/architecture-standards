@@ -22,8 +22,8 @@ BFF operation adds hosting/session costs. Neither profile removes XSS, CSRF, or 
 
 ## Traceability
 
-- [Identity, authorization, and session design](../security/identity-standard.md)
-- [Threat modeling and secure application behavior](../security/application-security-standard.md)
+- [Identity, authorization, and session design](https://github.com/Slight76/security-standards/blob/main/docs/identity-standard.md)
+- [Threat modeling and secure application behavior](https://github.com/Slight76/security-standards/blob/main/docs/application-security-standard.md)
 
 Rules: IAM-001, IAM-002, IAM-003, IAM-004, SEC-005, SEC-006, SEC-007.
 

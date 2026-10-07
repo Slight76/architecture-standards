@@ -22,8 +22,8 @@ At-least-once delivery needs deduplication, retention, dead-letter operations, a
 
 ## Traceability
 
-- [Idempotency, messaging, and resilience](../integration/messaging-resilience.md)
-- [Cache selection, ownership, and invalidation](../backend/caching-standard.md)
+- [Idempotency, messaging, and resilience](../docs/messaging-resilience.md)
+- [Cache selection, ownership, and invalidation](https://github.com/Slight76/data-standards/blob/main/docs/caching-standard.md)
 
 Rules: RES-001, RES-002, EVT-001, EVT-002, CACHE-001, CACHE-002.
 

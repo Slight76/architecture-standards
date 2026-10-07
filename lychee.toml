@@ -1,0 +1,11 @@
+# lychee link checker configuration shared by all Slight76 standards repositories.
+max_retries = 2
+timeout = 20
+accept = [200, 203, 204, 206, 301, 302, 307, 308, 403, 429]
+exclude = [
+  "^https://github.com/Slight76/[^/]+/blob/main/.*",  # cross-handbook links are validated by tooling/validate.py
+  "^https://agent-plugins.org/",
+  "^https://fly.io/",
+  "^mailto:",
+]
+exclude_path = [".marketplace", ".standards", "node_modules", "scaffold"]

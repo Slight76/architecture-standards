@@ -22,8 +22,8 @@ Test environments and evidence retention cost time and resources. Protection set
 
 ## Traceability
 
-- [Build, release, and supply-chain controls](../platform/delivery-standard.md)
-- [Verification boundaries and test evidence](../platform/testing-standard.md)
+- [Build, release, and supply-chain controls](https://github.com/Slight76/operations-standards/blob/main/docs/delivery-standard.md)
+- [Verification boundaries and test evidence](https://github.com/Slight76/engineering-standards/blob/main/docs/testing-standard.md)
 
 Rules: CICD-001, CICD-002, CICD-003, TEST-001, TEST-002, TEST-003.
 

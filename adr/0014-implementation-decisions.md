@@ -22,7 +22,7 @@ Cross-origin deployments need browser tests and coordinated headers. CORS does n
 
 ## Traceability
 
-- [CORS and browser origin policy](../security/cors-standard.md)
+- [CORS and browser origin policy](https://github.com/Slight76/security-standards/blob/main/docs/cors-standard.md)
 
 Rules: CORS-001, CORS-002, CORS-003.
 

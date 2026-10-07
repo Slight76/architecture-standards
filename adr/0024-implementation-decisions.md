@@ -22,7 +22,7 @@ Additional manifests and evidence checks are needed, but normal authorized work 
 
 ## Traceability
 
-- [Agent development protocol and evidence](../governance/agent-development-standard.md)
+- [Agent development protocol and evidence](https://github.com/Slight76/engineering-standards/blob/main/docs/agent-development-standard.md)
 
 Rules: AGT-001, AGT-002, AGT-003, AGT-004.
 

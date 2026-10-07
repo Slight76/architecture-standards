@@ -4,6 +4,8 @@ Status: Proposed
 
 Date: 2026-10-05
 
+> Amended 2026-10-06: this record predates the v1.0.0 split. "Enterprise" wording is historical; the team-level operating model now lives in [standards-marketplace](https://github.com/Slight76/standards-marketplace/blob/main/governance/team-operating-model.md) (see [ADR-0028](0028-retire-enterprise-layer.md) and [ADR-0029](0029-split-into-domain-handbooks.md)).
+
 ## Context
 
 Enterprise labels can cause agents to add orchestration and HA without justified needs.
@@ -22,7 +24,7 @@ Infrastructure requires ownership, state protection, drift response, and recover
 
 ## Traceability
 
-- [Network, compute, configuration, and infrastructure lifecycle](../infrastructure/implementation-standard.md)
+- [Network, compute, configuration, and infrastructure lifecycle](https://github.com/Slight76/operations-standards/blob/main/docs/infrastructure-implementation-standard.md)
 
 Rules: INF-004, INF-005, INF-006.
 

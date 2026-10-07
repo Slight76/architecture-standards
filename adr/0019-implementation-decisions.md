@@ -22,8 +22,8 @@ Compatibility periods and backfills cost storage/operations. Recovery targets mu
 
 ## Traceability
 
-- [Logical and physical database design](../database/design-standard.md)
-- [Schema delivery and recovery](../database/migration-recovery-standard.md)
+- [Logical and physical database design](https://github.com/Slight76/data-standards/blob/main/docs/design-standard.md)
+- [Schema delivery and recovery](https://github.com/Slight76/data-standards/blob/main/docs/migration-recovery-standard.md)
 
 Rules: DB-006, DB-007, DB-008, MIG-001, MIG-002, DR-001.
 

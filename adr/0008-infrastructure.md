@@ -6,6 +6,8 @@ Date: 2026-10-05
 
 Owner: Repository owner; named delegate unassigned.
 
+> Amended 2026-10-06: this record predates the v1.0.0 split. "Enterprise" wording is historical; the team-level operating model now lives in [standards-marketplace](https://github.com/Slight76/standards-marketplace/blob/main/governance/team-operating-model.md) (see [ADR-0028](0028-retire-enterprise-layer.md) and [ADR-0029](0029-split-into-domain-handbooks.md)).
+
 ## Context
 
 The owner is building an enterprise architecture standards repository consumed by application developers and coding agents. Frontend and backend applications must remain independent. Domain boundaries need usable, verifiable guidance.
@@ -24,7 +26,7 @@ Each domain can evolve independently but changes require cross-domain review. Te
 
 ## Traceability
 
-See [Infrastructure architecture](../infrastructure/architecture.md), [principles](../ARCHITECTURE-PRINCIPLES.md), and [adoption](../governance/adoption.md). Related: [ADR-0010](0010-independent-applications.md), [ADR-0011](0011-agent-consumption.md).
+See [Infrastructure architecture](https://github.com/Slight76/operations-standards/blob/main/docs/infrastructure-architecture.md), [principles](../ARCHITECTURE-PRINCIPLES.md), and [adoption](https://github.com/Slight76/engineering-standards/blob/main/docs/adoption-process.md). Related: [ADR-0010](0010-independent-applications.md), [ADR-0011](0011-agent-consumption.md).
 
 ## Verification
 

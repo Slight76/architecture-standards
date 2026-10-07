@@ -22,7 +22,7 @@ Integration tests must cover short-circuits and failures as well as the happy pa
 
 ## Traceability
 
-[HTTP middleware and host composition](../backend/middleware-standard.md). Rules: MW-001, MW-002, MW-003, MW-004. Related: [backend decisions](0018-implementation-decisions.md), [HTTP/contracts](0013-implementation-decisions.md), [identity](0015-implementation-decisions.md).
+[HTTP middleware and host composition](../docs/middleware-standard.md). Rules: MW-001, MW-002, MW-003, MW-004. Related: [backend decisions](0018-implementation-decisions.md), [HTTP/contracts](0013-implementation-decisions.md), [identity](0015-implementation-decisions.md).
 
 ## Verification
 

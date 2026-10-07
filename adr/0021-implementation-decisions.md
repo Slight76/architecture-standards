@@ -22,7 +22,7 @@ Operational owners must set thresholds and maintain dashboards. Telemetry failur
 
 ## Traceability
 
-- [Observability, health, and service objectives](../platform/observability-standard.md)
+- [Observability, health, and service objectives](https://github.com/Slight76/operations-standards/blob/main/docs/observability-standard.md)
 
 Rules: OBS-001, OBS-002, SLO-001.
 

@@ -22,8 +22,8 @@ Uniform clients and compatibility checks cost tooling and consumer-window mainte
 
 ## Traceability
 
-- [HTTP API design](../integration/http-api-standard.md)
-- [Contract ownership, generation, and compatibility](../integration/contracts-standard.md)
+- [HTTP API design](../docs/http-api-standard.md)
+- [Contract ownership, generation, and compatibility](../docs/contracts-standard.md)
 
 Rules: API-001, API-002, API-003, API-004, CON-001, CON-002, CON-003.
 

@@ -22,8 +22,8 @@ Ports and mapping add code. Apply domain richness proportionally rather than cre
 
 ## Traceability
 
-- [Backend modules, use cases, and dependencies](../backend/implementation-standard.md)
-- [Persistence, transactions, and query behavior](../backend/persistence-standard.md)
+- [Backend modules, use cases, and dependencies](https://github.com/Slight76/engineering-standards/blob/main/docs/backend-implementation-standard.md)
+- [Persistence, transactions, and query behavior](https://github.com/Slight76/data-standards/blob/main/docs/persistence-standard.md)
 
 Rules: BE-006, BE-007, BE-008, BE-009, DATA-001, DATA-002, DATA-003.
 

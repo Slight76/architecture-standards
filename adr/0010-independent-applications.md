@@ -4,6 +4,8 @@ Status: Accepted
 
 Date: 2026-10-05
 
+> Amended 2026-10-06: this record predates the v1.0.0 split. "Enterprise" wording is historical; the team-level operating model now lives in [standards-marketplace](https://github.com/Slight76/standards-marketplace/blob/main/governance/team-operating-model.md) (see [ADR-0028](0028-retire-enterprise-layer.md) and [ADR-0029](0029-split-into-domain-handbooks.md)).
+
 ## Context
 
 Applications need a reusable enterprise design and instructions that agents can apply consistently.
@@ -22,7 +24,7 @@ Maintain baseline pins and compatibility evidence. Do not confuse independent ap
 
 ## Traceability
 
-[Agent instructions](../AGENTS.md), [frontend](../frontend/architecture.md), [backend](../backend/architecture.md), [integration](../integration/architecture.md), [governance](../governance/adoption.md).
+[Agent instructions](https://github.com/Slight76/standards-marketplace/blob/main/README.md), [frontend](../docs/frontend-architecture.md), [backend](../docs/backend-architecture.md), [integration](../docs/integration-architecture.md), [governance](https://github.com/Slight76/engineering-standards/blob/main/docs/adoption-process.md).
 
 ## Verification
 
