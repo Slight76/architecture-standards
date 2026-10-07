@@ -8,4 +8,4 @@ permissions:
 jobs:
   lint:
     # Pinned to a marketplace commit SHA at release time (see standards-marketplace README "Versioning").
-    uses: Slight76/standards-marketplace/.github/workflows/docs-lint.yml@main
+    uses: Slight76/standards-marketplace/.github/workflows/docs-lint.yml@2de30a538cedee9395ee92e844c6d1d3d4a43ad7 # v1.0.0
