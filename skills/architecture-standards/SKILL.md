@@ -1,5 +1,6 @@
 ---
 name: architecture-standards
+license: MIT
 description: Slight76 team architecture standards. Use when designing or reviewing a solution, service, or module boundary; choosing between synchronous and asynchronous integration; designing or changing an HTTP API, OpenAPI document, contract, or generated client; adding messaging, retries, idempotency, or resilience; structuring a .NET backend (use cases, CQRS, middleware order, host composition) or a React/TypeScript frontend (state, routing, accessibility, performance budgets); writing or updating an architecture decision record (ADR); or producing a solution architecture document before production.
 ---
 # Architecture standards
