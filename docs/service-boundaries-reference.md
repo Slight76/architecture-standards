@@ -8,7 +8,7 @@ owner: "@Slight76"
 
 Baseline: 1.0.0. Applies when: deciding what becomes a module, a container, or a separate service, or when reviewing a proposed split or merge
 
-Decision: [ADR-0029](../adr/0029-split-into-domain-handbooks.md). This document is guidance; it adds no rules. Binding requirements are SA-* (solution), BE-* (backend ownership), INT-* (integration), and DB-* in the [data handbook](https://github.com/Slight76/data-standards/blob/main/docs/database-architecture.md) (store ownership).
+Decision: [ADR-0029](../adr/0029-split-into-domain-handbooks.md). This document is guidance; it adds no rules. Binding requirements are SA-*(solution), BE-* (backend ownership), INT-*(integration), and DB-* in the [data handbook](https://github.com/Slight76/data-standards/blob/main/docs/database-architecture.md) (store ownership).
 
 ## Boundary candidates
 

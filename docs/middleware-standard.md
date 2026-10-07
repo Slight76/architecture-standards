@@ -9,7 +9,6 @@ supersedes: architecture-standards/backend/middleware-standard.md@c1bda3d
 
 Baseline: 1.0.0. Applies to the ASP.NET Core backend profile. Decision: [ADR-0026](../adr/0026-middleware.md). Effective when adopted by the solution.
 
-
 ## Composition structure
 
 Keep Program.cs as the readable composition root. Declare middleware order in one place; do not scatter Use... calls across modules that secretly reorder security. Registration extensions configure services, pipeline extensions configure ordered HTTP behavior, endpoint extensions map routes. These names are project conventions, not built-in framework functions.
@@ -92,7 +91,6 @@ UseAntiforgery is not a blanket guarantee that all JSON endpoints are validated.
 Boot the real host and prove: untrusted forwarded headers cannot alter redirect identity; valid preflight reaches CORS without auth challenge; unauthorized requests never reach use cases; authenticated quota exhaustion returns the documented 429; missing/invalid CSRF fails cookie mutations; downstream faults yield safe problems and a final-status log; existing error bodies/challenges survive; streaming/cancelled responses are not rewritten; production documentation routes are absent or explicitly protected. Tests should demonstrate behavior rather than only checking the order of strings in Program.cs.
 
 Sources: [ASP.NET middleware](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-10.0), [rate limiting](https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?view=aspnetcore-10.0). This composition profile is our design, not a claim of one universal ordering for every application type.
-
 
 ## Rules and evidence
 

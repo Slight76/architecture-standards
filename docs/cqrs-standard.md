@@ -9,7 +9,6 @@ supersedes: architecture-standards/backend/cqrs-standard.md@c1bda3d
 
 Baseline: 1.0.0. Applies to the ASP.NET Core backend profile. Decision: [ADR-0025](../adr/0025-cqrs.md). Effective when adopted by the solution.
 
-
 ## How it relates to REST and CORS
 
 CQRS separates read and write application models/operations. REST describes an API architectural style; a resource-oriented HTTP endpoint can invoke a CQRS handler. CORS governs browser cross-origin response access. These decisions are independent and may coexist.
@@ -85,7 +84,6 @@ Verify query execution leaves authoritative rows/versions unchanged; commands en
 Avoid giant command/query classes serving every feature, mandatory mediator packages, one database per handler, event sourcing by default, and handlers invoking HTTP endpoints internally.
 
 Source: [Microsoft CQRS pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs). Folder layout and default execution policy are repository design choices. Related: [persistence](https://github.com/Slight76/data-standards/blob/main/docs/persistence-standard.md), [idempotency and messaging](messaging-resilience.md).
-
 
 ## Rules and evidence
 

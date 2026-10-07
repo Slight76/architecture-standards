@@ -11,7 +11,6 @@ Baseline: 1.0.0. Applies when: multiple applications form a business solution
 
 Decision: [ADR-0023](../adr/0023-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 
-
 ## Design packet
 
 A solution packet must answer: who uses it, what outcome matters, which components deploy independently, what data they own, how identity flows, how failure is handled, and who operates it. Reference team-level rules rather than copy them. Pin the baseline and distinguish current, target, and transition states.
@@ -42,7 +41,6 @@ Each quality requirement has a scenario and measurable acceptance: stimulus, env
 Readiness requires approved business targets, named operations ownership, tested deployment/rollback, compatibility evidence, security negative tests, working alerts/runbooks, and measured recovery. Unknowns are tracked with owner and due date. Not every unknown blocks a prototype, but absent identity, data authorization, or recovery decisions block corresponding production claims.
 
 Use the [solution template](../templates/solution-architecture.md) and [evidence template](https://github.com/Slight76/standards-marketplace/blob/main/templates/implementation-evidence.md). Review against applicable rules; do not sign off a system solely because the documentation checker passes.
-
 
 ## Rules and required evidence
 

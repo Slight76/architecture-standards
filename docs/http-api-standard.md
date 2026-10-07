@@ -11,7 +11,6 @@ Baseline: 1.0.0. Applies when: an application exposes an HTTP API
 
 Decision: [ADR-0013](../adr/0013-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 
-
 ## Default and rationale
 
 Use resource-oriented JSON HTTP APIs for browser-facing business operations. REST is the architectural style; RESTful describes adherence, not another protocol. This profile chooses concrete HTTP conventions without claiming full REST constraint compliance or requiring hypermedia-driven clients. GraphQL needs a query/composition use case and cost controls; gRPC needs a supported service-to-service use case; events suit asynchronous propagation. Record such departures in a solution ADR.
@@ -60,7 +59,6 @@ The example type URL must be replaced with a maintained documentation URI. For e
 Contract tests cover each response, empty lists, invalid payloads, unsupported media types, unknown enum values, unauthorized IDs, and stale concurrent edits. Verify URLs/headers and behavior, not merely DTO compilation. Prohibit side-effecting GETs, unlimited lists, arbitrary SQL sort expressions, and automatic mutation retries without a replay contract.
 
 Sources: [HTTP semantics](https://httpwg.org/specs/rfc9110.html), [problem details](https://www.rfc-editor.org/rfc/rfc9457). Route naming, pagination limits, version paths, and money representation are our policy choices.
-
 
 ## Rules and required evidence
 

@@ -11,7 +11,6 @@ Baseline: 1.0.0. Applies when: operations retry, publish events, or call remote 
 
 Decision: [ADR-0016](../adr/0016-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 
-
 ## Timeouts and retries
 
 Every outbound dependency has an overall deadline, per-attempt timeout, cancellation propagation, and a bounded retry budget. Set concrete values from the caller's latency budget in the solution record. Retry only classified transient failures and only when the operation is safe to replay. Honor server retry guidance within the remaining deadline; use backoff and jitter. Avoid retries at every layer multiplying attempts. Circuit breaking protects a failing dependency; it does not make unsafe mutations replayable.
@@ -37,7 +36,6 @@ Bound retries, dead-letter poison messages, alert on oldest message age and back
 Database commits an adjustment and outbox entry. Dispatcher publishes, then crashes before marking it sent. On restart it publishes again. The consumer recognizes the same eventId and does not apply the adjustment twice. A test must force that crash window rather than merely assert that Publish was called.
 
 Prohibit fire-and-forget tasks inside request handlers for durable work, unbounded retries, blanket retry of POST, queue-as-database assumptions, and a cache as the sole record of idempotency for critical writes.
-
 
 ## Rules and required evidence
 

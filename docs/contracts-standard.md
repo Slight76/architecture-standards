@@ -11,7 +11,6 @@ Baseline: 1.0.0. Applies when: separate repositories exchange HTTP contracts
 
 Decision: [ADR-0013](../adr/0013-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 
-
 ## Publication flow
 
 The backend owns its OpenAPI source or generated artifact, with one declared source of truth. The default .NET profile generates OpenAPI from the implementation in CI, normalizes deterministic output, and publishes a versioned artifact with checksum and source commit. Frontend builds pin an artifact version/checksum, not a running developer server. Commit generated client code by default for review; record generator name/version/configuration so regeneration is reproducible.
@@ -41,7 +40,6 @@ For a breaking change: introduce a new major contract or compatible expansion; p
 Regenerate twice and compare; CI must fail on uncommitted generated drift. Parse the OpenAPI document with a real validator and run request/response contract tests. Build the frontend with the pinned artifact. Do not fetch `latest` during a build, publish an untested client, assume all clients deploy simultaneously, or treat TypeScript types as runtime validation of untrusted JSON.
 
 Source: [OpenAPI 3.1.1](https://spec.openapis.org/oas/v3.1.1.html). Artifact lifecycle and compatibility gates are our policy.
-
 
 ## Rules and required evidence
 

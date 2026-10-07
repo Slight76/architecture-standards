@@ -9,7 +9,6 @@ supersedes: architecture-standards/backend/openapi-swagger-standard.md@c1bda3d
 
 Baseline: 1.0.0. Applies to the ASP.NET Core backend profile. Decision: [ADR-0027](../adr/0027-openapi-swagger.md). Effective when adopted by the solution.
 
-
 ## Default toolchain
 
 OpenAPI is the machine-readable API contract. Swagger UI renders and can exercise that contract; it does not implement authorization or prove correctness. For the ASP.NET Core profile, use Microsoft.AspNetCore.OpenApi as the single document generator and Swashbuckle.AspNetCore.SwaggerUi for the interactive UI. Choose pinned compatible package versions when the template is built. Verify the UI and TypeScript generator support the selected OpenAPI dialect; the recommended contract profile is OpenAPI 3.1.
@@ -89,7 +88,6 @@ CI sequence: generate all intended documents; validate syntax/spec and local ref
 Verify each intended endpoint is present once in the right audience/version; private endpoints are absent from public docs; operation IDs are unique/stable; validation/authorization/conflict responses match the running API; security declarations match anonymous/protected endpoints; document/UI URLs work under a proxy prefix; production docs follow the exposure decision; generation does not execute migrations or require live services; a changed contract rebuilds a pinned client successfully. A rendered Swagger page alone passes none of these contract gates.
 
 Sources: [OpenAPI overview](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview?view=aspnetcore-10.0), [document customization](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/customize-openapi?view=aspnetcore-10.0), [Swagger UI integration](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/using-openapi-documents?view=aspnetcore-10.0). Related: [contract lifecycle](contracts-standard.md), [middleware](middleware-standard.md).
-
 
 ## Rules and evidence
 

@@ -10,6 +10,7 @@ Repository split (ADR-0028..0031). History before this release is tagged `v0.3.0
 - Added `plugin.json` (Agent Plugins 1.0) and `skills/architecture-standards/`; removed mirrored `.agents/`, `.claude/`, `.github/skills/` copies and `scripts/sync_skills.py`.
 - CI uses the reusable `standards-marketplace` docs-lint workflow. Added MIT license; repository is public.
 - Amended ADR-0001..0012 and ADR-0022 with historical notes; ADR-0001 and ADR-0023 superseded by ADR-0028.
+
 ## 0.3.0 — 2026-10-05
 
 - Added logical CQRS defaults, command/query structure and application execution boundaries.

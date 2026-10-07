@@ -11,7 +11,6 @@ Baseline: 1.0.0. Applies when: a solution presents a browser UI
 
 Decision: [ADR-0017](../adr/0017-implementation-decisions.md). Rules become binding when this baseline is adopted; examples explain the policy and do not establish business requirements.
 
-
 ## Accessibility baseline
 
 Target WCAG 2.2 AA for the UI profile. This is a design/test target, not a certification claim. Prefer semantic HTML and native controls. Inputs need labels and accessible error associations; dialogs need focus entry, containment where appropriate, Escape handling, and focus return. All controls need visible focus and keyboard operation. Never rely on color alone for meaning.
@@ -31,7 +30,6 @@ A user opens the inventory list using only a keyboard, changes the filter, opens
 Automated accessibility scanning runs in component/E2E checks, followed by keyboard and representative screen-reader review. Automated scans alone cannot establish conformance. Budget regressions require measured investigation, not arbitrary test-threshold increases.
 
 Source: [WCAG 2.2](https://www.w3.org/TR/WCAG22/).
-
 
 ## Rules and required evidence
 
